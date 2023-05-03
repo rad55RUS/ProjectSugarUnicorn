@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using DataClasses;
-
-namespace MainProject
+namespace DataClasses
 {
-    public interface IPresenter
+    public class InflationDataClass
     {
-        void LoadData(string path);
+        public InflationDataClass()
+        {
+
+        }
     }
 }

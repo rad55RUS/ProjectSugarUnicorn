@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using MainProject.Properties;
 
-using DataClasses_Library;
+using DataClasses;
 
 namespace MainProject
 {

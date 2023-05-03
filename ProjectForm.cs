@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using DataClasses_Library;
-
 namespace MainProject
 {
     public partial class ProjectForm : Form, IProjectForm

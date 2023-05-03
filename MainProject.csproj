@@ -62,6 +62,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataClasses\InflationDataClass.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Presenter\IPresenter.cs" />
     <Compile Include="IProjectForm.cs" />
@@ -113,12 +114,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassData_Library\DataClasses_Library.csproj">
-      <Project>{9f3479c9-a828-4ec9-8031-bf059916e589}</Project>
-      <Name>DataClasses_Library</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

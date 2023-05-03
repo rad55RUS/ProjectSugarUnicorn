@@ -1,0 +1,11 @@
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\bin\Debug\ScoreTable.exe.config
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\bin\Debug\ScoreTable.exe
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\bin\Debug\ScoreTable.pdb
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.csproj.AssemblyReference.cache
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.csproj.SuggestedBindingRedirects.cache
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.Properties.Resources.resources
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.ScoreTable.resources
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.csproj.GenerateResource.cache
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.csproj.CoreCompileInputs.cache
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.exe
+C:\Users\radel\Desktop\Учёба\Основы программирования 3 Семестр\Лаба 2\Программа\ScoreTable\obj\Debug\ScoreTable.pdb

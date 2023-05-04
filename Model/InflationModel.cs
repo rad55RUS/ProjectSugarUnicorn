@@ -1,9 +1,9 @@
 ﻿using System.Xml;
 using System.Collections.Generic;
 
-using MainProject.Properties;
-
 using DataClasses;
+
+using MainProject.Properties;
 
 namespace MainProject
 {

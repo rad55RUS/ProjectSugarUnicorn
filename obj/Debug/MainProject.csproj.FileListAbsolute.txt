@@ -18,3 +18,6 @@ C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии прог
 C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
 C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\obj\Debug\ScoreTable.exe
 C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\obj\Debug\ScoreTable.pdb
+C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\bin\Debug\ScoreTable.exe.config
+C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\bin\Debug\ScoreTable.exe
+C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\bin\Debug\ScoreTable.pdb

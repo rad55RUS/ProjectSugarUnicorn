@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses\InflationDataClass.cs" />
+    <Compile Include="DataClasses\IDataClass.cs" />
     <Compile Include="Model\IModel.cs" />
     <Compile Include="Presenter\IPresenter.cs" />
     <Compile Include="IProjectForm.cs" />

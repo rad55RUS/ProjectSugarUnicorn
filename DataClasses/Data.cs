@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace DataClasses
 {
-    public class InflationDataClass : IDataClass
+    public class Data
     {
         // Private fields
         private int year;
@@ -42,9 +42,9 @@ namespace DataClasses
         //
 
         // Constructors
-        public InflationDataClass() { }
+        public Data() { }
 
-        public InflationDataClass(int year, double cpi)
+        public Data(int year, double cpi)
         {
             this.Year = year;
             this.CPI = cpi;

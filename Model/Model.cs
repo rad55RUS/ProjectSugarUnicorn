@@ -8,14 +8,14 @@ using System;
 
 namespace MainProject
 {
-    public class InflationModel
+    public class Model
     {
         // Public fields
-        public List<Data> Data = new List<Data>();
+        public List<Data> DataList = new List<Data>();
         //
 
         // Constructors
-        public InflationModel() { }
+        public Model() { }
         //
 
         // Public methods
@@ -44,7 +44,7 @@ namespace MainProject
                         }
                     }
 
-                    Data.Add(inflationObject);
+                    DataList.Add(inflationObject);
                 }
             }
         }

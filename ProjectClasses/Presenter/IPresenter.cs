@@ -11,6 +11,10 @@ namespace MainProject
 {
     public interface IPresenter
     {
-        void LoadData(string path);
+        void LoadData();
+        // Call methods
+        void UpdateInflationData_Call(int year, double CPI);
+        void UpdatePredictedInflation_Call(double predictedInflation);
+        //
     }
 }

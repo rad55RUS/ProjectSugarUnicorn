@@ -26,12 +26,20 @@ namespace MainProject
             model = new Model();
         }
 
-        internal void LoadData(string path)
+        public void LoadData(string path)
         {
             model.LoadData(path);
+            List<Data> dataList = model.DataList;
+
+            foreach(Data data in dataList)
+            {
+                presenter.UpdateInflationData_Call(data.Year, data.CPI);
+            }
+
+            presenter.UpdatePredictedInflation_Call(PredictInflation(dataList));
         }
 
-        internal double PredictInflation(List<Data> dataList)
+        public double PredictInflation(List<Data> dataList)
         {
             double predictedCPI = 0;
 
@@ -39,9 +47,11 @@ namespace MainProject
             {
                 predictedCPI += data.CPI;
             }
-
-            predictedCPI = dataList.Count / 100 * Math.Pow(predictedCPI / 100, 2) * 100;
-
+            
+            predictedCPI /= (double)dataList.Count;
+            predictedCPI /= 100;
+            predictedCPI *= Math.Pow(predictedCPI, 2) * 100;
+            
             return predictedCPI;
         }
     }

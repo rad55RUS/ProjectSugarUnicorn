@@ -3,48 +3,48 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="Data_Schema.xsd">
 	<Year Value="2008">
-		<CPI>102.31</CPI>
+		<CPI>113.28</CPI>
 	</Year>
 	<Year Value="2009">
-		<CPI>102.31</CPI>
+		<CPI>108.80</CPI>
 	</Year>
 	<Year Value="2010">
-		<CPI>102.31</CPI>
+		<CPI>108.78</CPI>
 	</Year>
 	<Year Value="2011">
-		<CPI>102.31</CPI>
+		<CPI>106.10</CPI>
 	</Year>
 	<Year Value="2012">
-		<CPI>102.31</CPI>
+		<CPI>106.57</CPI>
 	</Year>
 	<Year Value="2013">
-		<CPI>102.31</CPI>
+		<CPI>106.47</CPI>
 	</Year>
 	<Year Value="2014">
-		<CPI>102.31</CPI>
+		<CPI>111.35</CPI>
 	</Year>
 	<Year Value="2015">
-		<CPI>102.31</CPI>
+		<CPI>112.91</CPI>
 	</Year>
 	<Year Value="2016">
-		<CPI>102.31</CPI>
+		<CPI>105.39</CPI>
 	</Year>
 	<Year Value="2017">
-		<CPI>102.31</CPI>
+		<CPI>102.51</CPI>
 	</Year>
 	<Year Value="2018">
-		<CPI>102.31</CPI>
+		<CPI>104.26</CPI>
 	</Year>
 	<Year Value="2019">
-		<CPI>102.31</CPI>
+		<CPI>103.04</CPI>
 	</Year>
 	<Year Value="2020">
-		<CPI>102.31</CPI>
+		<CPI>104.91</CPI>
 	</Year>
 	<Year Value="2021">
-		<CPI>102.31</CPI>
+		<CPI>108.39</CPI>
 	</Year>
 	<Year Value="2022">
-		<CPI>102.31</CPI>
+		<CPI>111.94</CPI>
 	</Year>
 </Data>

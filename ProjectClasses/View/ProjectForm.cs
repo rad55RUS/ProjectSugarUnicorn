@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace MainProject
         {
             // Initalizing form
             InitializeComponent();
+            this.MaximumSize = this.Size;
             //
 
             // Presenter declaration
@@ -34,12 +36,19 @@ namespace MainProject
 
         // Public methods
         /// <summary>
-        /// (TEMPLATE) Load data to specific textbox
+        /// Add CPI to inflation DataGridView
         /// </summary>
-        /// <param name="text"></param>
-        public void LoadTextboxData(string text)
+        public void UpdateInflationData_Call(int year, double cpi)
         {
-            
+            InflationTable_DataGridView = presenter.UpdateData_InflationDataGridView(year, cpi, InflationTable_DataGridView);
+        }
+
+        /// <summary>
+        /// Add predicted inflation to textbox
+        /// </summary>
+        public void UpdatePredictedInflation_Call(double predictedInflation)
+        {
+            predictedInflation_TextBox.Text = presenter.UpdateTextBox(predictedInflation);
         }
 
         /// <summary>
@@ -62,7 +71,7 @@ namespace MainProject
         {
 
         }
-
+        
         /// <summary>
         /// Show error with specific message
         /// </summary>
@@ -70,6 +79,13 @@ namespace MainProject
         public void ShowError(string message)
         {
             MessageBox.Show(message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        //
+
+        // Click events
+        private void LoadData_Button_Click(object sender, EventArgs e)
+        {
+            presenter.LoadData();
         }
         //
     }

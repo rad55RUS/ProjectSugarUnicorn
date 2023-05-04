@@ -63,20 +63,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClasses\Data.cs" />
-    <Compile Include="Presenter\IPresenter.cs" />
-    <Compile Include="IProjectForm.cs" />
-    <Compile Include="Model\Model.cs" />
-    <Compile Include="Interactor\Interactor.cs" />
-    <Compile Include="Presenter\Presenter.cs" />
+    <Compile Include="ProjectClasses\View\IProjectForm.cs" />
+    <Compile Include="ProjectClasses\Model\Model.cs" />
+    <Compile Include="ProjectClasses\Interactor\Interactor.cs" />
+    <Compile Include="ProjectClasses\Presenter\IPresenter.cs" />
+    <Compile Include="ProjectClasses\Presenter\Presenter.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProjectForm.cs">
+    <Compile Include="ProjectClasses\View\ProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProjectForm.Designer.cs">
+    <Compile Include="ProjectClasses\View\ProjectForm.Designer.cs">
       <DependentUpon>ProjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ProjectForm.resx">
+    <EmbeddedResource Include="ProjectClasses\View\ProjectForm.resx">
       <DependentUpon>ProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

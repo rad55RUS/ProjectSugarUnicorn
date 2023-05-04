@@ -62,12 +62,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataClasses\InflationDataClass.cs" />
-    <Compile Include="DataClasses\IDataClass.cs" />
-    <Compile Include="Model\IModel.cs" />
+    <Compile Include="DataClasses\Data.cs" />
     <Compile Include="Presenter\IPresenter.cs" />
     <Compile Include="IProjectForm.cs" />
-    <Compile Include="Model\InflationModel.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="Interactor\Interactor.cs" />
     <Compile Include="Presenter\Presenter.cs" />
     <Compile Include="Program.cs" />
@@ -88,7 +86,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Assets\Data\InflationData_Schema.xsd">
+    <None Include="Assets\Data\Data_Schema.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -118,7 +116,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Assets\Data\InflationData.xml" />
+    <Content Include="Assets\Data\Data.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

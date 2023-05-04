@@ -8,10 +8,10 @@ using System;
 
 namespace MainProject
 {
-    public class InflationModel : IModel
+    public class InflationModel
     {
         // Public fields
-        public List<InflationDataClass> InflationData = new List<InflationDataClass>();
+        public List<Data> Data = new List<Data>();
         //
 
         // Constructors
@@ -32,7 +32,7 @@ namespace MainProject
             {
                 foreach (XmlElement xnode in xRoot)
                 {
-                    InflationDataClass inflationObject = new InflationDataClass();
+                    Data inflationObject = new Data();
 
                     XmlNode attr = xnode.Attributes.GetNamedItem("Year");
                     inflationObject.Year = Convert.ToInt32(attr.Value);
@@ -44,7 +44,7 @@ namespace MainProject
                         }
                     }
 
-                    InflationData.Add(inflationObject);
+                    Data.Add(inflationObject);
                 }
             }
         }

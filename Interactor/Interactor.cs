@@ -14,7 +14,7 @@ namespace MainProject
     {
         // Public fields
         public IPresenter presenter;
-        public InflationModel model;
+        public Model model;
         //
 
         // Constructors
@@ -22,7 +22,7 @@ namespace MainProject
         {
             this.presenter = presenter;
 
-            model = new InflationModel();
+            model = new Model();
         }
 
         internal void LoadData(string path)

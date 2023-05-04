@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Data 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Data_Schema.xsd">
+	<Year Value="2008">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2009">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2010">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2011">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2012">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2013">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2014">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2015">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2016">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2017">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2018">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2019">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2020">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2021">
+		<CPI>102.31</CPI>
+	</Year>
+	<Year Value="2022">
+		<CPI>102.31</CPI>
+	</Year>
+</Data>

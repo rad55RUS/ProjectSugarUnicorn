@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:element name="InflationData">
+	<xs:element name="Data">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Inflation" maxOccurs="unbounded">
+				<xs:element name="Year" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="CPI" type="xs:double"/>
 						</xs:sequence>
-						<xs:attribute name="Year" type="xs:int" use="required"/>
+						<xs:attribute name="Value" type="xs:int" use="required"/>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

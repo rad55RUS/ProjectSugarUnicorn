@@ -37,7 +37,7 @@ namespace MainProject
 
         // Public methods
         /// <summary>
-        /// Add CPI to inflation DataGridView
+        /// Add CPI to inflation DataGridView call
         /// </summary>
         public void UpdateInflationData_Call(int year, double cpi)
         {
@@ -45,7 +45,7 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Add predicted inflation to textbox
+        /// Add predicted inflation to textbox call
         /// </summary>
         public void UpdatePredictedInflation_Call(double predictedInflation)
         {
@@ -53,24 +53,17 @@ namespace MainProject
         }
 
         /// <summary>
-        /// (TEMPLATE) Add dot to specific graph
+        /// Recreate inflation graph call
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public void AddDot(int x, int y)
+        public void UpdateInflationGraph_Call()
         {
-
-        }
-
-        /// <summary>
-        /// (TEMPLATE) Add dot with signature to specific graph
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="xText"></param>
-        public void AddDot(int x, int y, string xText)
-        {
-            
+            presenter.GraphSizeInitialize(InflationGraph_PictureBox);
+            InflationGraph_PictureBox.Paint -= presenter.DrawGraph;
+            InflationGraph_PictureBox.Refresh();
+            InflationGraph_PictureBox.Paint += presenter.DrawGraph;
+            InflationGraph_PictureBox.Refresh();
         }
         
         /// <summary>
@@ -86,6 +79,7 @@ namespace MainProject
         // Click events
         private void LoadData_Button_Click(object sender, EventArgs e)
         {
+            this.InflationTable_DataGridView.Rows.Clear();
             presenter.LoadData();
         }
 
@@ -97,6 +91,10 @@ namespace MainProject
         private void CalcInflation_Current_TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = presenter.CheckNumEnter(e, CalcInflation_Current_TextBox.Text);
+            if (e.KeyChar == ((char)Keys.Enter)) 
+            {
+                CalcInflation_Possible_TextBox.Text = presenter.CalcInflation(CalcInflation_Current_TextBox.Text);
+            }
         }
         //
     }

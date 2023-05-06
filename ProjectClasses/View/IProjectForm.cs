@@ -10,10 +10,9 @@ namespace MainProject
 {
     public interface IProjectForm
     {
+        void UpdateInflationGraph_Call();
         void UpdateInflationData_Call(int year, double CPI);
         void UpdatePredictedInflation_Call(double predictedInflation);
-        void AddDot(int x, int y);
-        void AddDot(int x, int y, string xText);
         void ShowError(string message);
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.InflationGraph_PictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CalcInflation_Button = new System.Windows.Forms.Button();
             this.CalcInflation_Possible_TextBox = new System.Windows.Forms.TextBox();
@@ -43,12 +44,14 @@
             this.CPI_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoadData_Button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InflationGraph_PictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InflationTable_DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.InflationGraph_PictureBox);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.predictedInflation_TextBox);
             this.groupBox1.Controls.Add(this.label1);
@@ -56,10 +59,20 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(505, 399);
+            this.groupBox1.Size = new System.Drawing.Size(593, 435);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inflation";
+            // 
+            // InflationGraph_PictureBox
+            // 
+            this.InflationGraph_PictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.InflationGraph_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InflationGraph_PictureBox.Location = new System.Drawing.Point(131, 22);
+            this.InflationGraph_PictureBox.Name = "InflationGraph_PictureBox";
+            this.InflationGraph_PictureBox.Size = new System.Drawing.Size(456, 216);
+            this.InflationGraph_PictureBox.TabIndex = 17;
+            this.InflationGraph_PictureBox.TabStop = false;
             // 
             // groupBox2
             // 
@@ -69,7 +82,7 @@
             this.groupBox2.Controls.Add(this.CalcInflation_Current_TextBox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(131, 211);
+            this.groupBox2.Location = new System.Drawing.Point(186, 244);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(349, 136);
             this.groupBox2.TabIndex = 16;
@@ -128,7 +141,7 @@
             // predictedInflation_TextBox
             // 
             this.predictedInflation_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.predictedInflation_TextBox.Location = new System.Drawing.Point(318, 358);
+            this.predictedInflation_TextBox.Location = new System.Drawing.Point(373, 391);
             this.predictedInflation_TextBox.Name = "predictedInflation_TextBox";
             this.predictedInflation_TextBox.ReadOnly = true;
             this.predictedInflation_TextBox.Size = new System.Drawing.Size(67, 23);
@@ -138,7 +151,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(128, 358);
+            this.label1.Location = new System.Drawing.Point(183, 391);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 17);
             this.label1.TabIndex = 10;
@@ -150,7 +163,7 @@
             this.InflationTable_DataGridView.AllowUserToDeleteRows = false;
             this.InflationTable_DataGridView.AllowUserToResizeColumns = false;
             this.InflationTable_DataGridView.AllowUserToResizeRows = false;
-            this.InflationTable_DataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.InflationTable_DataGridView.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
             this.InflationTable_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InflationTable_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InflationYear_Column,
@@ -162,7 +175,7 @@
             this.InflationTable_DataGridView.RowHeadersVisible = false;
             this.InflationTable_DataGridView.RowTemplate.ReadOnly = true;
             this.InflationTable_DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InflationTable_DataGridView.Size = new System.Drawing.Size(103, 358);
+            this.InflationTable_DataGridView.Size = new System.Drawing.Size(103, 386);
             this.InflationTable_DataGridView.TabIndex = 9;
             // 
             // InflationYear_Column
@@ -188,7 +201,7 @@
             // LoadData_Button
             // 
             this.LoadData_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LoadData_Button.Location = new System.Drawing.Point(321, 418);
+            this.LoadData_Button.Location = new System.Drawing.Point(403, 454);
             this.LoadData_Button.Name = "LoadData_Button";
             this.LoadData_Button.Size = new System.Drawing.Size(197, 32);
             this.LoadData_Button.TabIndex = 1;
@@ -201,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(628, 561);
+            this.ClientSize = new System.Drawing.Size(772, 697);
             this.Controls.Add(this.LoadData_Button);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -210,6 +223,7 @@
             this.Text = "Statistics for Russia";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InflationGraph_PictureBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InflationTable_DataGridView)).EndInit();
@@ -232,5 +246,6 @@
         private System.Windows.Forms.TextBox CalcInflation_Current_TextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button CalcInflation_Button;
+        private System.Windows.Forms.PictureBox InflationGraph_PictureBox;
     }
 }

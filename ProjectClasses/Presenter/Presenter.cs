@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-
+using System.Xml.Schema;
 using MainProject.Properties;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -17,6 +19,12 @@ namespace MainProject
         // Public fields
         public IProjectForm view;
         public Interactor interactor;
+        //
+
+        // Internal fields
+        internal float graph_PictureBox_Height;
+        internal float graph_PictureBox_Width;
+        internal List<List<double>> dots;
         //
 
         // Constructors
@@ -61,7 +69,7 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Add year to view
+        /// Add year to view call
         /// </summary>
         public void UpdateInflationData_Call(int year, double cpi)
         {
@@ -69,7 +77,16 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Add predicted inflation to View
+        /// Recreate inflation graph in view call
+        /// </summary>
+        public void UpdateInflationGraph_Call(List<List<double>> dots)
+        {
+            this.dots = dots;
+            view.UpdateInflationGraph_Call();
+        }
+
+        /// <summary>
+        /// Add predicted inflation to View call
         /// </summary>
         public void UpdatePredictedInflation_Call(double predictedInflation)
         {
@@ -131,6 +148,86 @@ namespace MainProject
                 return false;
             }
             return true;
+        }
+
+        internal void GraphSizeInitialize(PictureBox graph_PictureBox)
+        {
+            graph_PictureBox_Height = graph_PictureBox.Height;
+            graph_PictureBox_Width = graph_PictureBox.Width;
+        }
+
+        internal void DrawGraph(object sender, PaintEventArgs e)
+        {
+            Font drawFont = new Font("Arial", 8, FontStyle.Bold);
+            StringFormat drawFormat = new StringFormat();
+
+            double Ystep;
+            double Ymax = double.MinValue;
+            double Ymin = double.MaxValue;
+
+            for(int i = 0; i < dots.Count; i++)
+            {
+                if (dots[i][1] > Ymax)
+                {
+                    Ymax = dots[i][1];
+                }
+                if (dots[i][1] < Ymin)
+                {
+                    Ymin = dots[i][1];
+                }
+            }
+
+            Ystep = (Ymax - Ymin) / dots.Count;
+
+            float heightStep = (graph_PictureBox_Height / dots.Count);
+            float widthStep = (graph_PictureBox_Width / dots.Count);
+
+            for (int i = 0; i < 15; i++)
+            {
+                float yLine = graph_PictureBox_Height - i * heightStep;
+                float xLine = graph_PictureBox_Width - i * widthStep;
+                var leftPoint = new PointF(0, yLine);
+                var rightPoint = new PointF(graph_PictureBox_Width, yLine);
+                var upPoint = new PointF(xLine, 0);
+                var downPoint = new PointF(xLine, graph_PictureBox_Height - i);
+
+                e.Graphics.DrawLine(Pens.LightGray, leftPoint, rightPoint);
+                e.Graphics.DrawLine(Pens.LightGray, upPoint, downPoint);
+
+            }
+
+            double y = Math.Round(Ymin, 0);
+            if (y > Ymin)
+            {
+                y--;
+            }
+
+            var prev = new PointF(graph_PictureBox_Width, graph_PictureBox_Height - ((float)dots[dots.Count - 1][1] * heightStep - heightStep * (float)Ymin + heightStep * (float)Ystep));
+            for (int i = 0; i < dots.Count; i++)
+            {
+                var xDot = graph_PictureBox_Width - i * widthStep;
+                var yDot = graph_PictureBox_Height - ((float)dots[dots.Count - 1 - i][1] * heightStep - heightStep * (float)Ymin + heightStep * (float)Ystep);
+                e.Graphics.FillEllipse(new SolidBrush(Color.Red), xDot, yDot, 6, 6);
+
+                var curr = new PointF(xDot, yDot);
+                e.Graphics.DrawLine(Pens.Black, prev, curr);
+                prev = curr;
+            }
+
+            for (int i = 0; i < dots.Count; i++)
+            {
+                double x = dots[dots.Count - 1 - i][0];
+
+                if (i > 0)
+                {
+                    e.Graphics.DrawString(y.ToString(), drawFont, new SolidBrush(Color.DarkOrchid), 0, graph_PictureBox_Height - 9 - i * heightStep, drawFormat);
+                    e.Graphics.DrawString(x.ToString(), drawFont, new SolidBrush(Color.DarkSlateBlue), graph_PictureBox_Width - 9 - i * widthStep, graph_PictureBox_Height - drawFont.Size * 2, drawFormat);
+                }
+
+                y += Math.Round(Ystep);
+            }
+
+            drawFont.Dispose();
         }
         ////
         //

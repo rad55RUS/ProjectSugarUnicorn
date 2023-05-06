@@ -17,7 +17,7 @@ namespace MainProject
         public IPresenter presenter;
         public Model model;
         //
-
+        
         // Constructors
         public Interactor(IPresenter presenter)
         {
@@ -25,7 +25,7 @@ namespace MainProject
 
             model = new Model();
         }
-
+        
         // Public methods
         /// <summary>
         /// Load data from model database
@@ -35,13 +35,21 @@ namespace MainProject
         {
             model.LoadData(path);
             List<Data> dataList = model.DataList;
+            List<List<double>> dots = new List<List<double>>();
 
             foreach(Data data in dataList)
             {
+                List<double> coordinate = new List<double>();
+                coordinate.Add(data.Year);
+                coordinate.Add(data.CPI);
+                dots.Add(coordinate);
+
                 presenter.UpdateInflationData_Call(data.Year, data.CPI);
             }
 
             model.predictedCPI = PredictInflation(dataList);
+
+            presenter.UpdateInflationGraph_Call(dots);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
         }
 

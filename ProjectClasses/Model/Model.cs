@@ -14,6 +14,7 @@ namespace MainProject
     {
         // Public fields
         public List<Data> DataList = new List<Data>();
+        public double predictedCPI;
         //
 
         // Constructors
@@ -28,6 +29,7 @@ namespace MainProject
         public void LoadData(string path)
         {
             DataList.Clear();
+            predictedCPI = 0;
 
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(path);

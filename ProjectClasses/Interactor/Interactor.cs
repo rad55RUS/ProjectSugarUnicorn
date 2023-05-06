@@ -26,6 +26,11 @@ namespace MainProject
             model = new Model();
         }
 
+        // Public methods
+        /// <summary>
+        /// Load data from model database
+        /// </summary>
+        /// <param name="path"></param>
         public void LoadData(string path)
         {
             model.LoadData(path);
@@ -36,9 +41,15 @@ namespace MainProject
                 presenter.UpdateInflationData_Call(data.Year, data.CPI);
             }
 
-            presenter.UpdatePredictedInflation_Call(PredictInflation(dataList));
+            model.predictedCPI = PredictInflation(dataList);
+            presenter.UpdatePredictedInflation_Call(model.predictedCPI);
         }
 
+        /// <summary>
+        /// Calculate inflation for 3 next years
+        /// </summary>
+        /// <param name="dataList"></param>
+        /// <returns></returns>
         public double PredictInflation(List<Data> dataList)
         {
             double predictedCPI = 0;
@@ -47,12 +58,23 @@ namespace MainProject
             {
                 predictedCPI += data.CPI;
             }
-            
+
             predictedCPI /= (double)dataList.Count;
             predictedCPI /= 100;
             predictedCPI *= Math.Pow(predictedCPI, 2) * 100;
-            
+
             return predictedCPI;
         }
+
+        /// <summary>
+        /// Calculate inflation for a product for 3 next years
+        /// </summary>
+        /// <param name="currentCost"></param>
+        /// <returns></returns>
+        public double CalcInflation(double currentCost)
+        {
+            return currentCost *= (model.predictedCPI / 100);
+        }
+        //
     }
 }

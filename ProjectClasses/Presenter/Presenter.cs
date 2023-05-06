@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 using MainProject.Properties;
@@ -11,7 +12,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace MainProject
 {
-    public class Presenter: IPresenter
+    public class Presenter : IPresenter
     {
         // Public fields
         public IProjectForm view;
@@ -58,7 +59,7 @@ namespace MainProject
                 }
             }
         }
-        
+
         /// <summary>
         /// Add year to view
         /// </summary>
@@ -66,7 +67,7 @@ namespace MainProject
         {
             view.UpdateInflationData_Call(year, cpi);
         }
-        
+
         /// <summary>
         /// Add predicted inflation to View
         /// </summary>
@@ -94,6 +95,42 @@ namespace MainProject
         {
             _double = Math.Round(_double, 2);
             return Convert.ToString(_double);
+        }
+
+        /// <summary>
+        /// Update textbox string
+        /// </summary>
+        internal string CalcInflation(string currentCost_String)
+        {
+            if (currentCost_String.Last() == ',')
+            {
+                currentCost_String = currentCost_String.Replace(",", "");
+            }
+            double currentCost_Double = interactor.CalcInflation(Convert.ToDouble(currentCost_String));
+
+            currentCost_Double = Math.Round(currentCost_Double, 2);
+            currentCost_String = Convert.ToString(currentCost_Double);
+
+            return currentCost_String;
+        }
+
+        /// <summary>
+        /// Check num entering
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        internal bool CheckNumEnter(KeyPressEventArgs e, string text)
+        {
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 44 || e.KeyChar == 8)
+            {
+                if (e.KeyChar == 44 && (text.Contains(",") || text.Length == 0))
+                {
+                    return true;
+                }
+                return false;
+            }
+            return true;
         }
         ////
         //

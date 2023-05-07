@@ -10,8 +10,8 @@ namespace MainProject
 {
     public interface IProjectForm
     {
-        void UpdateInflationGraph_Call();
-        void UpdateInflationData_Call(int year, double CPI);
+        void UpdateInflationChart_Call();
+        void UpdateInflationData_Call();
         void UpdatePredictedInflation_Call(double predictedInflation);
         void ShowError(string message);
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Schema;
 using MainProject.Properties;
 using static System.Net.Mime.MediaTypeNames;
@@ -22,8 +24,6 @@ namespace MainProject
         //
 
         // Internal fields
-        internal float graph_PictureBox_Height;
-        internal float graph_PictureBox_Width;
         internal List<List<double>> dots;
         //
 
@@ -71,18 +71,19 @@ namespace MainProject
         /// <summary>
         /// Add year to view call
         /// </summary>
-        public void UpdateInflationData_Call(int year, double cpi)
+        public void UpdateInflationData_Call(List<List<double>> dots)
         {
-            view.UpdateInflationData_Call(year, cpi);
+            this.dots = dots;
+            view.UpdateInflationData_Call();
         }
 
         /// <summary>
-        /// Recreate inflation graph in view call
+        /// Recreate inflation chart in view call
         /// </summary>
-        public void UpdateInflationGraph_Call(List<List<double>> dots)
+        public void UpdateInflationChart_Call(List<List<double>> dots)
         {
             this.dots = dots;
-            view.UpdateInflationGraph_Call();
+            view.UpdateInflationChart_Call();
         }
 
         /// <summary>
@@ -98,11 +99,15 @@ namespace MainProject
         /// <summary>
         /// Add data to inflation DataGridView
         /// </summary>
-        internal DataGridView UpdateData_InflationDataGridView(int year, double cpi, DataGridView InflationTable)
+        internal DataGridView UpdateDataGridView(DataGridView dataGridView)
         {
-            InflationTable.Rows.Add(year, cpi);
+            dataGridView.Rows.Clear();
+            for (int i = 0; i < dots.Count; i++)
+            {
+                dataGridView.Rows.Add(dots[i][0], dots[i][1]);
+            }
 
-            return InflationTable;
+            return dataGridView;
         }
 
         /// <summary>
@@ -150,86 +155,53 @@ namespace MainProject
             return true;
         }
 
-        internal void GraphSizeInitialize(PictureBox graph_PictureBox)
+        /// <summary>
+        /// Clear chart from any data
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <returns></returns>
+        internal Chart ClearChart(Chart chart)
         {
-            graph_PictureBox_Height = graph_PictureBox.Height;
-            graph_PictureBox_Width = graph_PictureBox.Width;
+            chart.Series.Clear();
+            return chart;
         }
 
-        internal void DrawGraph(object sender, PaintEventArgs e)
+        /// <summary>
+        /// Fill chart with dots
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <returns></returns>
+        internal Chart UpdateChart(Chart chart)
         {
-            Font drawFont = new Font("Arial", 8, FontStyle.Bold);
-            StringFormat drawFormat = new StringFormat();
 
-            double Ystep;
-            double Ymax = double.MinValue;
-            double Ymin = double.MaxValue;
-
-            for(int i = 0; i < dots.Count; i++)
+            if (dots.Count > 0)
             {
-                if (dots[i][1] > Ymax)
+                Series series1 = new Series();
+                series1.Name = "Accumulated CPI";
+                series1.ChartType = SeriesChartType.Area;
+                series1.Color = Color.OrangeRed;
+                double accumulatedCPI = dots[0][1];
+                series1.Points.AddXY(dots[0][0], accumulatedCPI);
+
+                for (int i = 1; i < dots.Count; i++)
                 {
-                    Ymax = dots[i][1];
+                    accumulatedCPI /= 100;
+                    accumulatedCPI *= (dots[i][1]);
+                    series1.Points.AddXY(dots[i][0], accumulatedCPI);
                 }
-                if (dots[i][1] < Ymin)
+                chart.Series.Add(series1);
+
+                Series series = new Series();
+                series.Name = "CPI";
+                series.ChartType = SeriesChartType.Area;
+                for (int i = 0; i < dots.Count; i++)
                 {
-                    Ymin = dots[i][1];
+                    series.Points.AddXY(dots[i][0], dots[i][1]);
                 }
+                chart.Series.Add(series);
             }
 
-            Ystep = (Ymax - Ymin) / dots.Count;
-
-            float heightStep = (graph_PictureBox_Height / dots.Count);
-            float widthStep = (graph_PictureBox_Width / dots.Count);
-
-            for (int i = 0; i < 15; i++)
-            {
-                float yLine = graph_PictureBox_Height - i * heightStep;
-                float xLine = graph_PictureBox_Width - i * widthStep;
-                var leftPoint = new PointF(0, yLine);
-                var rightPoint = new PointF(graph_PictureBox_Width, yLine);
-                var upPoint = new PointF(xLine, 0);
-                var downPoint = new PointF(xLine, graph_PictureBox_Height - i);
-
-                e.Graphics.DrawLine(Pens.LightGray, leftPoint, rightPoint);
-                e.Graphics.DrawLine(Pens.LightGray, upPoint, downPoint);
-
-            }
-
-            double y = Math.Round(Ymin, 0);
-            if (y > Ymin)
-            {
-                y--;
-            }
-
-            var prev = new PointF(graph_PictureBox_Width, graph_PictureBox_Height - ((float)dots[dots.Count - 1][1] * heightStep - heightStep * (float)Ymin + heightStep * (float)Ystep));
-            for (int i = 0; i < dots.Count; i++)
-            {
-                var xDot = graph_PictureBox_Width - i * widthStep;
-                var yDot = graph_PictureBox_Height - ((float)dots[dots.Count - 1 - i][1] * heightStep - heightStep * (float)Ymin + heightStep * (float)Ystep);
-                e.Graphics.FillEllipse(new SolidBrush(Color.Red), xDot, yDot, 6, 6);
-
-                var curr = new PointF(xDot, yDot);
-                e.Graphics.DrawLine(Pens.Black, prev, curr);
-                prev = curr;
-            }
-
-            for (int i = 0; i < dots.Count; i++)
-            {
-                double x = dots[dots.Count - 1 - i][0];
-
-                if (i > 0)
-                {
-                    e.Graphics.DrawString(y.ToString(), drawFont, new SolidBrush(Color.DarkOrchid), 0, graph_PictureBox_Height - 9 - i * heightStep, drawFormat);
-                    e.Graphics.DrawString(x.ToString(), drawFont, new SolidBrush(Color.DarkSlateBlue), graph_PictureBox_Width - 9 - i * widthStep, graph_PictureBox_Height - drawFont.Size * 2, drawFormat);
-                }
-
-                y += Math.Round(Ystep);
-            }
-
-            drawFont.Dispose();
+            return chart;
         }
-        ////
-        //
     }
 }

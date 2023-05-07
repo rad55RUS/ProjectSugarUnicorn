@@ -13,8 +13,8 @@ namespace MainProject
     {
         void LoadData();
         // Call methods
-        void UpdateInflationGraph_Call(List<List<double>> dots);
-        void UpdateInflationData_Call(int year, double CPI);
+        void UpdateInflationChart_Call(List<List<double>> dots);
+        void UpdateInflationData_Call(List<List<double>> dots);
         void UpdatePredictedInflation_Call(double predictedInflation);
         //
     }

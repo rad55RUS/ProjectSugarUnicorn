@@ -44,12 +44,12 @@ namespace MainProject
                 coordinate.Add(data.CPI);
                 dots.Add(coordinate);
 
-                presenter.UpdateInflationData_Call(data.Year, data.CPI);
             }
 
             model.predictedCPI = PredictInflation(dataList);
 
-            presenter.UpdateInflationGraph_Call(dots);
+            presenter.UpdateInflationData_Call(dots);
+            presenter.UpdateInflationChart_Call(dots);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
         }
 

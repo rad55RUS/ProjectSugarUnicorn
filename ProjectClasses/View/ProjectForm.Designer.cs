@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(100D, 100D);
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(200D, 101D);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.InflationGraph_PictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CalcInflation_Button = new System.Windows.Forms.Button();
             this.CalcInflation_Possible_TextBox = new System.Windows.Forms.TextBox();
@@ -43,15 +47,16 @@
             this.InflationYear_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPI_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoadData_Button = new System.Windows.Forms.Button();
+            this.InflationChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InflationGraph_PictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InflationTable_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InflationChart)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.InflationGraph_PictureBox);
+            this.groupBox1.Controls.Add(this.InflationChart);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.predictedInflation_TextBox);
             this.groupBox1.Controls.Add(this.label1);
@@ -63,16 +68,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inflation";
-            // 
-            // InflationGraph_PictureBox
-            // 
-            this.InflationGraph_PictureBox.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.InflationGraph_PictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InflationGraph_PictureBox.Location = new System.Drawing.Point(131, 22);
-            this.InflationGraph_PictureBox.Name = "InflationGraph_PictureBox";
-            this.InflationGraph_PictureBox.Size = new System.Drawing.Size(456, 216);
-            this.InflationGraph_PictureBox.TabIndex = 17;
-            this.InflationGraph_PictureBox.TabStop = false;
             // 
             // groupBox2
             // 
@@ -209,6 +204,29 @@
             this.LoadData_Button.UseVisualStyleBackColor = true;
             this.LoadData_Button.Click += new System.EventHandler(this.LoadData_Button_Click);
             // 
+            // InflationChart
+            // 
+            this.InflationChart.BorderlineColor = System.Drawing.Color.Black;
+            this.InflationChart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisX.IsStartedFromZero = false;
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.Name = "ChartArea1";
+            this.InflationChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.InflationChart.Legends.Add(legend1);
+            this.InflationChart.Location = new System.Drawing.Point(131, 22);
+            this.InflationChart.Name = "InflationChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+            series1.Legend = "Legend1";
+            series1.Name = "CPI";
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            this.InflationChart.Series.Add(series1);
+            this.InflationChart.Size = new System.Drawing.Size(456, 216);
+            this.InflationChart.TabIndex = 2;
+            this.InflationChart.Text = "chart1";
+            // 
             // ProjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,10 +241,10 @@
             this.Text = "Statistics for Russia";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InflationGraph_PictureBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InflationTable_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InflationChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -246,6 +264,6 @@
         private System.Windows.Forms.TextBox CalcInflation_Current_TextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button CalcInflation_Button;
-        private System.Windows.Forms.PictureBox InflationGraph_PictureBox;
+        private System.Windows.Forms.DataVisualization.Charting.Chart InflationChart;
     }
 }

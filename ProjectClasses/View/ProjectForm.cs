@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace MainProject
 {
@@ -28,6 +29,7 @@ namespace MainProject
 
             // Presenter declaration
             presenter = new Presenter(this);
+            InflationChart = presenter.ClearChart(InflationChart);
             //
 
             // Event assignment
@@ -39,9 +41,9 @@ namespace MainProject
         /// <summary>
         /// Add CPI to inflation DataGridView call
         /// </summary>
-        public void UpdateInflationData_Call(int year, double cpi)
+        public void UpdateInflationData_Call()
         {
-            InflationTable_DataGridView = presenter.UpdateData_InflationDataGridView(year, cpi, InflationTable_DataGridView);
+            InflationTable_DataGridView = presenter.UpdateDataGridView(InflationTable_DataGridView);
         }
 
         /// <summary>
@@ -53,17 +55,14 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Recreate inflation graph call
+        /// Recreate inflation chart call
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public void UpdateInflationGraph_Call()
+        public void UpdateInflationChart_Call()
         {
-            presenter.GraphSizeInitialize(InflationGraph_PictureBox);
-            InflationGraph_PictureBox.Paint -= presenter.DrawGraph;
-            InflationGraph_PictureBox.Refresh();
-            InflationGraph_PictureBox.Paint += presenter.DrawGraph;
-            InflationGraph_PictureBox.Refresh();
+            InflationChart = presenter.ClearChart(InflationChart);
+            InflationChart = presenter.UpdateChart(InflationChart);
         }
         
         /// <summary>
@@ -79,7 +78,6 @@ namespace MainProject
         // Click events
         private void LoadData_Button_Click(object sender, EventArgs e)
         {
-            this.InflationTable_DataGridView.Rows.Clear();
             presenter.LoadData();
         }
 

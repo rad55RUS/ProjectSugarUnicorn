@@ -62,7 +62,8 @@ namespace MainProject
         public void UpdateInflationChart_Call()
         {
             InflationChart = presenter.ClearChart(InflationChart);
-            InflationChart = presenter.UpdateChart(InflationChart);
+            InflationChart = presenter.UpdateChart_Accumulated(InflationChart);
+            InflationChart = presenter.UpdateChart_Common(InflationChart);
         }
         
         /// <summary>

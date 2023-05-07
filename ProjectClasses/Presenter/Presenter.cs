@@ -167,11 +167,11 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Fill chart with dots
+        /// Fill chart with accumulated dots
         /// </summary>
         /// <param name="chart"></param>
         /// <returns></returns>
-        internal Chart UpdateChart(Chart chart)
+        internal Chart UpdateChart_Accumulated(Chart chart)
         {
 
             if (dots.Count > 0)
@@ -190,7 +190,21 @@ namespace MainProject
                     series1.Points.AddXY(dots[i][0], accumulatedCPI);
                 }
                 chart.Series.Add(series1);
+            }
 
+            return chart;
+        }
+
+        /// <summary>
+        /// Fill chart with dots
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <returns></returns>
+        internal Chart UpdateChart_Common(Chart chart)
+        {
+
+            if (dots.Count > 0)
+            {
                 Series series = new Series();
                 series.Name = "CPI";
                 series.ChartType = SeriesChartType.Area;

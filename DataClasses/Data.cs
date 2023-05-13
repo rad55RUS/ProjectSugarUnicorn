@@ -13,6 +13,7 @@ namespace DataClasses
         // Private fields
         private int year;
         private double cpi;
+        private double population;
         //
 
         // Public properties
@@ -39,15 +40,27 @@ namespace DataClasses
                 cpi = value;
             }
         }
+        public double Population
+        {
+            get
+            {
+                return population;
+            }
+            set
+            {
+                population = value;
+            }
+        }
         //
 
         // Constructors
         public Data() { }
 
-        public Data(int year, double cpi)
+        public Data(int year, double cpi, double population)
         {
             this.Year = year;
             this.CPI = cpi;
+            this.Population = population;
         }
         //
     }

@@ -94,6 +94,10 @@ namespace MainProject
             view.UpdatePredictedInflation_Call((double)predictedInflation);
         }
         ////
+        public void UpdatePopulationChange_Call(double populationChange)
+        {
+            view.UpdatePredictedInflation_Call((double)populationChange);
+        }
 
         //// Internal void methods
         /// <summary>

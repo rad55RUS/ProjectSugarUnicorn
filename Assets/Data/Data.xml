@@ -4,47 +4,62 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="Data_Schema.xsd">
 	<Year Value="2008">
 		<CPI>113.28</CPI>
+		<population>142.8</population>
 	</Year>
 	<Year Value="2009">
 		<CPI>108.80</CPI>
+		<population>142.7</population>
 	</Year>
 	<Year Value="2010">
 		<CPI>108.78</CPI>
+		<population>142.9</population>
 	</Year>
 	<Year Value="2011">
 		<CPI>106.10</CPI>
+		<population>142.9</population>
 	</Year>
 	<Year Value="2012">
 		<CPI>106.57</CPI>
+		<population>143.0</population>
 	</Year>
 	<Year Value="2013">
 		<CPI>106.47</CPI>
+		<population>143.3</population>
 	</Year>
 	<Year Value="2014">
 		<CPI>111.35</CPI>
+		<population>143.7</population>
 	</Year>
 	<Year Value="2015">
 		<CPI>112.91</CPI>
+		<population>146.3</population>
 	</Year>
 	<Year Value="2016">
 		<CPI>105.39</CPI>
+		<population>146.5</population>
 	</Year>
 	<Year Value="2017">
 		<CPI>102.51</CPI>
+		<population>146.8</population>
 	</Year>
 	<Year Value="2018">
 		<CPI>104.26</CPI>
+		<population>146.9</population>
 	</Year>
 	<Year Value="2019">
 		<CPI>103.04</CPI>
+		<population>146.8</population>
 	</Year>
 	<Year Value="2020">
 		<CPI>104.91</CPI>
+		<population>146.7</population>
 	</Year>
 	<Year Value="2021">
 		<CPI>108.39</CPI>
+		<population>146.2</population>
 	</Year>
 	<Year Value="2022">
 		<CPI>111.94</CPI>
+		<population>147.0</population>
 	</Year>
 </Data>

@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ProjectClasses",
+    "\\ProjectClasses\\View"
   ],
+  "SelectedNode": "\\ProjectClasses\\View\\ProjectForm.cs",
   "PreviewInSolutionExplorer": false
 }

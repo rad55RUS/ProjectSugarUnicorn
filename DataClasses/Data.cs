@@ -13,6 +13,7 @@ namespace DataClasses
         // Private fields
         private int year;
         private double cpi;
+        Sub sub = new Sub();
         //
 
         // Public properties
@@ -41,13 +42,24 @@ namespace DataClasses
         }
         //
 
+        public struct Sub
+            {
+                public string Name;
+                public double pop;
+            }
+
+
+
         // Constructors
         public Data() { }
 
-        public Data(int year, double cpi)
+        public Data(int year, double cpi, string Name, double pop)
         {
+
             this.Year = year;
             this.CPI = cpi;
+            sub.Name = Name;
+            sub.pop = pop;
         }
         //
     }

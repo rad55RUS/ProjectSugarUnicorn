@@ -38,13 +38,13 @@ namespace MainProject
 
             model.predictedCPI = PredictInflation(model.DataList);
             model.populationChange = PopulationChange(model.DataList);
-            model.populationDecline = PopulationDecline(model.DataList);
+            model.populationDecline = PopulationDecline(model.DataList,ref model.DistrictName);
 
             presenter.UpdateInflationData_Call(model.DataList);
             presenter.UpdateInflationChart_Call(model.DataList);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
             presenter.UpdatePopulationChange_Call(model.populationChange);
-            presenter.UpdatePopulationDecline_Call(model.populationDecline);
+            presenter.UpdatePopulationDecline_Call(model.populationDecline, model.DistrictName);
         }
 
         /// <summary>
@@ -89,11 +89,11 @@ namespace MainProject
 
         }
         
-        public double PopulationDecline(List<Data> dataList)
+        public double PopulationDecline(List<Data> dataList, ref string DistricName)
         {
             List<double> populationdecline = new List<double>();
 
-            double Max=double.MaxValue;
+            double Max=double.MinValue;
 
             for (int i = 0; i < dataList[0].districts.Count; i++)
                 {
@@ -102,6 +102,7 @@ namespace MainProject
                     if (populationdecline[i] > Max)
                     {
                         Max = populationdecline[i];
+                        DistricName = dataList[0].districts[i].Name;
                     }
                 }
 

@@ -14,5 +14,6 @@ namespace MainProject
         void UpdateInflationData_Call();
         void UpdatePredictedInflation_Call(double predictedInflation);
         void ShowError(string message);
+        void UpdatePopulationDecline_Call(double populationDecline, string DistrictName);
     }
 }

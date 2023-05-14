@@ -17,6 +17,7 @@ namespace MainProject
         public double predictedCPI;
         public double populationChange;
         public double populationDecline;
+        public string DistrictName="";
         //
 
         // Constructors

@@ -44,3 +44,14 @@ C:\Users\пк\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.Gene
 C:\Users\пк\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
 C:\Users\пк\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.exe
 C:\Users\пк\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.pdb
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\bin\Debug\ScoreTable.exe.config
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\bin\Debug\ScoreTable.exe
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\bin\Debug\ScoreTable.pdb
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.AssemblyReference.cache
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\MainProject.ProjectForm.resources
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\ScoreTable.Properties.Resources.resources
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.GenerateResource.cache
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\ScoreTable.exe
+C:\Users\пк\source\repos\rad55RUS\ProjectSugarUnicorn1\obj\Debug\ScoreTable.pdb

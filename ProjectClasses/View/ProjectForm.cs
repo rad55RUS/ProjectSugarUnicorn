@@ -54,6 +54,12 @@ namespace MainProject
             predictedInflation_TextBox.Text = presenter.UpdateTextBox(predictedInflation);
         }
 
+        public void UpdatePopulationDecline_Call(double populationDecline, string DistrictName)
+        {
+            textBox1.Text = presenter.UpdateTextBox(populationDecline);
+            districtName.Text = "Округ с самой большой убылью - " + DistrictName;
+        }
+
         /// <summary>
         /// Recreate inflation chart call
         /// </summary>
@@ -64,6 +70,8 @@ namespace MainProject
             InflationChart = presenter.ClearChart(InflationChart);
             InflationChart = presenter.UpdateChart_Accumulated(InflationChart);
             InflationChart = presenter.UpdateChart_Common(InflationChart);
+            DistrictPopChart = presenter.ClearChart(DistrictPopChart);
+            DistrictPopChart = presenter.UpdateChart_District(DistrictPopChart);
         }
         
         /// <summary>
@@ -94,6 +102,11 @@ namespace MainProject
             {
                 CalcInflation_Possible_TextBox.Text = presenter.CalcInflation(CalcInflation_Current_TextBox.Text);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
         //
     }

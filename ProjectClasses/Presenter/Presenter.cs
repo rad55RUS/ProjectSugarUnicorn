@@ -102,9 +102,9 @@ namespace MainProject
             view.UpdatePredictedInflation_Call((double)populationChange);
         }
 
-        public void UpdatePopulationDecline_Call(double populationDecline)
+        public void UpdatePopulationDecline_Call(double populationDecline, string DistrictName)
         {
-            view.UpdatePopulationDecline_Call((double)populationDecline);
+            view.UpdatePopulationDecline_Call((double)populationDecline, DistrictName);
         }
         ////
 
@@ -115,9 +115,23 @@ namespace MainProject
         internal DataGridView UpdateDataGridView(DataGridView dataGridView)
         {
             dataGridView.Rows.Clear();
+            dataGridView.Columns.Clear();
+            dataGridView.Columns.Add("year_Column", "Year");
+            dataGridView.Columns.Add("cpi_Column", "CPI");
+            foreach (Data.District district in dataList[0].districts)
+            {
+                dataGridView.Columns.Add(district.Name + "_Column", district.Name);
+            }
+
             for (int i = 0; i < dataList.Count; i++)
             {
-                dataGridView.Rows.Add(dataList[i].Year, dataList[i].CPI);
+                dataGridView.Rows.Add();
+                dataGridView[0, i].Value = dataList[i].Year;
+                dataGridView[1, i].Value = dataList[i].CPI;
+                for (int j = 0; j < dataList[0].districts.Count; j++)
+                {
+                    dataGridView[2 + j, i].Value = dataList[i].districts[j].Population;
+                }
             }
 
             return dataGridView;
@@ -225,6 +239,38 @@ namespace MainProject
                     series.Points.AddXY(dataList[i].Year, dataList[i].CPI);
                 }
                 chart.Series.Add(series);
+            }
+
+            return chart;
+        }
+        internal Chart UpdateChart_District(Chart chart)
+        {
+
+            if (dataList.Count > 0)
+            {
+                List<Series> seriesList = new List<Series>();
+                foreach (Data.District district in dataList[0].districts)
+                {
+                    Series series = new Series();
+                    series.Name = district.Name;
+                    series.ChartType = SeriesChartType.Line;
+                    seriesList.Add(series);
+                }
+
+                for (int i = 0; i < dataList.Count; i++)
+                {
+                    foreach (Data.District district in dataList[i].districts)
+                    {
+                        for (int j = 0; j < dataList[j].districts.Count; j++)
+                        {
+                            seriesList[j].Points.AddXY(dataList[i].Year, dataList[i].districts[j].Population);
+                        }
+                    }
+                }
+                foreach (Series series in seriesList)
+                {
+                    chart.Series.Add(series);
+                }
             }
 
             return chart;

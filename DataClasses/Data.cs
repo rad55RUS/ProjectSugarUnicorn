@@ -99,7 +99,7 @@ namespace DataClasses
         //
 
         // Methods
-        public AddDistrict(string name, double population)
+        public void AddDistrict(string name, double population)
         {
             district.name = name;
             district.population = population;

@@ -15,6 +15,7 @@ namespace MainProject
         // Public fields
         public List<Data> DataList = new List<Data>();
         public double predictedCPI;
+        public double populationChange;
         //
 
         // Constructors
@@ -38,7 +39,7 @@ namespace MainProject
             {
                 foreach (XmlElement xnode in xRoot)
                 {
-                    Data inflationObject = new Data();
+                    Data dataObject = new Data();
 
                     XmlNode attr = xnode.Attributes.GetNamedItem("Value");
                     try
@@ -47,7 +48,7 @@ namespace MainProject
                         {
                             throw new Exception();
                         }
-                        inflationObject.Year = Convert.ToInt32(attr.Value);
+                        dataObject.Year = Convert.ToInt32(attr.Value);
                         foreach (XmlNode childnode in xnode.ChildNodes)
                         {
                             if (childnode.Name == "CPI")
@@ -64,11 +65,27 @@ namespace MainProject
                                         tempString += childnode.InnerText[i];
                                     }
                                 }
-                                inflationObject.CPI = Convert.ToDouble(tempString);
+                                dataObject.CPI = Convert.ToDouble(tempString);
+                            }
+                            if (childnode.Name == "population")
+                            {
+                                string tempString = "";
+                                for (int i = 0; i < childnode.InnerText.Length; i++)
+                                {
+                                    if (childnode.InnerText[i] == '.')
+                                    {
+                                        tempString += ",";
+                                    }
+                                    else
+                                    {
+                                        tempString += childnode.InnerText[i];
+                                    }
+                                }
+                                dataObject.Population = Convert.ToDouble(tempString);
                             }
                         }
 
-                        DataList.Add(inflationObject);
+                        DataList.Add(dataObject);
                     }
                     catch (Exception ex)
                     {

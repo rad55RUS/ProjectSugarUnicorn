@@ -22,3 +22,14 @@ C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии прог
 C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\bin\Debug\ScoreTable.exe
 C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\bin\Debug\ScoreTable.pdb
 C:\Users\radel\Desktop\Учёба\4 Семестр\Технологии программирования\Лаба 3\Программа\MainProject\obj\Debug\MainProject.ProjectForm.resources
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\bin\Debug\ScoreTable.exe.config
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\bin\Debug\ScoreTable.exe
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\bin\Debug\ScoreTable.pdb
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.AssemblyReference.cache
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.ProjectForm.resources
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.Properties.Resources.resources
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.GenerateResource.cache
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.exe
+C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.pdb

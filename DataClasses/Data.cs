@@ -13,7 +13,8 @@ namespace DataClasses
         // Private fields
         private int year;
         private double cpi;
-        Sub sub = new Sub();
+        private double population;
+        private District district = new District();
         //
 
         // Public properties
@@ -40,26 +41,68 @@ namespace DataClasses
                 cpi = value;
             }
         }
+        public double Population
+        {
+            get
+            {
+                return population;
+            }
+            set
+            {
+                population = value;
+            }
+        }
         //
 
-        public struct Sub
+        // Structures
+        public struct District
+        {
+            private string name;
+            private double population;
+
+            public string Name
             {
-                public string Name;
-                public double pop;
+                get
+                {
+                    return name;
+                }
+                set
+                {
+                    name = value;
+                }
             }
 
-
+            public double Population 
+            {
+                get
+                {
+                    return population;
+                }
+                set
+                {
+                    population = value;
+                }
+            }
+        }
+        //
 
         // Constructors
         public Data() { }
 
-        public Data(int year, double cpi, string Name, double pop)
+        public Data(int year, double cpi, double population)
         {
 
-            this.Year = year;
-            this.CPI = cpi;
-            sub.Name = Name;
-            sub.pop = pop;
+            this.year = year;
+            this.cpi = cpi;
+            this.population = population;
+        }
+        //
+
+        // Methods
+        public AddDistrict(string name, double population)
+        {
+            district.name = name;
+            district.population = population;
         }
         //
     }

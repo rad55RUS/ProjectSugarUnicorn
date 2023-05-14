@@ -42,15 +42,18 @@ namespace MainProject
                 List<double> coordinate = new List<double>();
                 coordinate.Add(data.Year);
                 coordinate.Add(data.CPI);
+                coordinate.Add(data.Population);
                 dots.Add(coordinate);
 
             }
 
             model.predictedCPI = PredictInflation(dataList);
+            model.populationChange = PopulationChange(dataList);
 
             presenter.UpdateInflationData_Call(dots);
             presenter.UpdateInflationChart_Call(dots);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
+            presenter.UpdatePopulationChange_Call(model.populationChange);
         }
 
         /// <summary>
@@ -74,6 +77,19 @@ namespace MainProject
             return predictedCPI;
         }
 
+        public double PopulationChange(List<Data> dataList)
+        {
+            double populatitionChange = 0;
+            foreach (Data data in dataList)
+            {
+                populatitionChange += data.Population;
+            }
+            populatitionChange /= (double)dataList.Count;
+            populatitionChange = 100 * (Math.Pow(1 + populatitionChange / 100, 3) - 1);
+
+            return populatitionChange;
+
+        }
         /// <summary>
         /// Calculate inflation for a product for 3 next years
         /// </summary>

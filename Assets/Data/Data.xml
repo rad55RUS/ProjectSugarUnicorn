@@ -4,482 +4,378 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="Data_Schema.xsd">
 	<Year Value="2008">
 		<CPI>113.28</CPI>
-		
-		<sub Value ="Center">
-			<pop>37.15</pop>
-		</sub>
-		
-		<sub Value ="Severo-zapad">
-			<pop>13.50</pop>
-		</sub>
-		
-		<sub Value ="Yuzhnyy">
-			<pop>22.84</pop>
-		</sub>
-		
-		<sub Value ="Privolzhskiy">
-			<pop>30.24</pop>
-		</sub>
-		
-		<sub Value ="Ural'skiy">
-			<pop>12.24</pop>
-		</sub>
-		
-		<sub Value ="Sibirskiy">
-			<pop>19.55</pop>
-		</sub>
-		
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.49</pop>
-		</sub>
-		
+		<population>142.8</population>
+		<district Value ="Center">
+			<population>37.15</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.50</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>22.84</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>30.24</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.24</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.55</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.49</population>
+		</district>
 	</Year>
 	<Year Value="2009">
 		<CPI>108.80</CPI>
-
-		<sub Value ="Center">
-			<pop>37.12</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.46</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>22.90</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>30.16</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.25</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.54</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.46</pop>
-		</sub>
-		
+		<population>142.7</population>
+		<district Value ="Center">
+			<population>37.12</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.46</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>22.90</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>30.16</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.25</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.54</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.46</population>
+		</district>
 	</Year>
 	<Year Value="2010">
 		<CPI>108.78</CPI>
-
-		<sub Value ="Center">
-			<pop>38.43</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.62</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>13.85</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.90</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.08</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.26</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.29</pop>
-		</sub>
-		
+		<population>142.9</population>
+		<district Value ="Center">
+			<population>38.43</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.62</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>13.85</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.90</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.08</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.26</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.29</population>
+		</district>
 	</Year>
 	<Year Value="2011">
 		<CPI>106.10</CPI>
+		<population>142.9</population>
+		<district Value ="Center">
+			<population>38.45</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.63</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>13.85</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.88</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.09</population>
+		</district>
 
-		<sub Value ="Center">
-			<pop>38.45</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.63</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>13.85</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.88</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.09</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.25</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.28</pop>
-		</sub>
-
+		<district Value ="Sibirskiy">
+			<population>19.25</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.28</population>
+		</district>
 	</Year>
 	<Year Value="2012">
 		<CPI>106.57</CPI>
-
-		<sub Value ="Center">
-			<pop>38.54</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.66</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>13.88</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.81</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.14</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.26</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.27</pop>
-		</sub>
-
+		<population>143.0</population>
+		<district Value ="Center">
+			<population>38.54</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.66</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>13.88</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.81</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.14</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.26</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.27</population>
+		</district>
 	</Year>
 	<Year Value="2013">
 		<CPI>106.47</CPI>
-		
-		<sub Value ="Center">
-			<pop>38.68</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.72</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>13.91</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.77</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.19</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.28</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.25</pop>
-		</sub>
-
+		<population>143.3</population>
+		<district Value ="Center">
+			<population>38.68</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.72</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>13.91</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.77</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.19</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.28</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.25</population>
+		</district>
 	</Year>
 	<Year Value="2014">
 		<CPI>111.35</CPI>
-
-		<sub Value ="Center">
-			<pop>38.82</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.80</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>13.96</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.74</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.23</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.29</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.23</pop>
-		</sub>
-
+		<population>143.7</population>
+		<district Value ="Center">
+			<population>38.82</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.80</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>13.96</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.74</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.23</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.29</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.23</population>
+		</district>
 	</Year>
 	<Year Value="2015">
 		<CPI>112.91</CPI>
-
-		<sub Value ="Center">
-			<pop>38.95</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.84</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>14.00</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.72</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.28</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.31</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.21</pop>
-		</sub>
-
+		<population>146.3</population>
+		<district Value ="Center">
+			<population>38.95</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.84</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>14.00</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.72</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.28</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.31</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.21</population>
+		</district>
 	</Year>
 	<Year Value="2016">
 		<CPI>105.39</CPI>
-
-		<sub Value ="Center">
-			<pop>39.10</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.85</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>14.04</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.67</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.31</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.32</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.19</pop>
-		</sub>
-
+		<population>146.5</population>
+		<district Value ="Center">
+			<population>39.10</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.85</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>14.04</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.67</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.31</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.32</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.19</population>
+		</district>
 	</Year>
 	<Year Value="2017">
 		<CPI>102.51</CPI>
-
-		<sub Value ="Center">
-			<pop>39.21</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.90</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>16.43</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.64</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.35</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.33</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.18</pop>
-		</sub>
-
+		<population>146.8</population>
+		<district Value ="Center">
+			<population>39.21</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.90</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>16.43</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.64</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.35</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.33</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.18</population>
+		</district>
 	</Year>
 	<Year Value="2018">
 		<CPI>104.26</CPI>
-
-		<sub Value ="Center">
-			<pop>39.31</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.95</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>16.44</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.54</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.36</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>19.29</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>6.17</pop>
-		</sub>
-
+		<population>146.9</population>
+		<district Value ="Center">
+			<population>39.31</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.95</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>16.44</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.54</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.36</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>19.29</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>6.17</population>
+		</district>
 	</Year>
 	<Year Value="2019">
 		<CPI>103.04</CPI>
-
-		<sub Value ="Center">
-			<pop>39.38</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.97</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>16.45</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.40</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.35</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>17.17</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>8.19</pop>
-		</sub>
-
+		<population>146.8</population>
+		<district Value ="Center">
+			<population>39.38</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.97</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>16.45</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.40</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.35</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>17.17</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>8.19</population>
+		</district>
 	</Year>
 	<Year Value="2020">
 		<CPI>104.91</CPI>
-
-		<sub Value ="Center">
-			<pop>39.43</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.98</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>16.47</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>29.29</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.36</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>17.12</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>8.17</pop>
-		</sub>
-
+		<population>146.7</population>
+		<district Value ="Center">
+			<population>39.43</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.98</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>16.47</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>29.29</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.36</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>17.12</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>8.17</population>
+		</district>
 	</Year>
 	<Year Value="2021">
 		<CPI>108.39</CPI>
-
-		<sub Value ="Center">
-			<pop>40.33</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.92</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>16.75</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>28.94</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.30</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>17.79</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>7.98</pop>
-		</sub>
-
+		<population>146.2</population>
+		<district Value ="Center">
+			<population>40.33</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.92</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>16.75</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>28.94</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.30</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>17.79</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>7.98</population>
+		</district>
 	</Year>
 	<Year Value="2022">
 		<CPI>111.94</CPI>
-
-		<sub Value ="Center">
-			<pop>40.30</pop>
-		</sub>
-
-		<sub Value ="Severo-zapad">
-			<pop>13.91</pop>
-		</sub>
-
-		<sub Value ="Yuzhnyy">
-			<pop>16.72</pop>
-		</sub>
-
-		<sub Value ="Privolzhskiy">
-			<pop>28.87</pop>
-		</sub>
-
-		<sub Value ="Ural'skiy">
-			<pop>12.29</pop>
-		</sub>
-
-		<sub Value ="Sibirskiy">
-			<pop>17.76</pop>
-		</sub>
-
-		<sub Value ="Dal'nevostochnyy">
-			<pop>7.97</pop>
-		</sub>
-
+		<population>147.0</population>
+		<district Value ="Center">
+			<population>40.30</population>
+		</district>
+		<district Value ="Severo-zapad">
+			<population>13.91</population>
+		</district>
+		<district Value ="Yuzhnyy">
+			<population>16.72</population>
+		</district>
+		<district Value ="Privolzhskiy">
+			<population>28.87</population>
+		</district>
+		<district Value ="Ural'skiy">
+			<population>12.29</population>
+		</district>
+		<district Value ="Sibirskiy">
+			<population>17.76</population>
+		</district>
+		<district Value ="Dal'nevostochnyy">
+			<population>7.97</population>
+		</district>
 	</Year>
 </Data>

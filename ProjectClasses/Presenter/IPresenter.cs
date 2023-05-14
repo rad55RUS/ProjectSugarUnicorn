@@ -13,10 +13,11 @@ namespace MainProject
     {
         void LoadData();
         // Call methods
-        void UpdateInflationChart_Call(List<List<double>> dots);
-        void UpdateInflationData_Call(List<List<double>> dots);
+        void UpdateInflationChart_Call(List<Data> dataList);
+        void UpdateInflationData_Call(List<Data> dataList);
         void UpdatePredictedInflation_Call(double predictedInflation);
         void UpdatePopulationChange_Call(double populationChange);
+        void UpdatePopulationDecline_Call(double populationDecline);
         //
     }
 }

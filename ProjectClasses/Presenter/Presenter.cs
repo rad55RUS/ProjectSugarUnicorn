@@ -13,6 +13,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml.Schema;
 using MainProject.Properties;
 using static System.Net.Mime.MediaTypeNames;
+using DataClasses;
 
 namespace MainProject
 {
@@ -23,9 +24,7 @@ namespace MainProject
         public Interactor interactor;
         //
 
-        // Internal fields
-        internal List<List<double>> dots;
-        //
+        public List<Data> dataList; 
 
         // Constructors
         public Presenter(IProjectForm view)
@@ -71,18 +70,18 @@ namespace MainProject
         /// <summary>
         /// Add year to view call
         /// </summary>
-        public void UpdateInflationData_Call(List<List<double>> dots)
+        public void UpdateInflationData_Call(List<Data> dataList)
         {
-            this.dots = dots;
+            this.dataList = dataList;
             view.UpdateInflationData_Call();
         }
 
         /// <summary>
         /// Recreate inflation chart in view call
         /// </summary>
-        public void UpdateInflationChart_Call(List<List<double>> dots)
+        public void UpdateInflationChart_Call(List<Data> dataList)
         {
-            this.dots = dots;
+            this.dataList = dataList;
             view.UpdateInflationChart_Call();
         }
 
@@ -101,6 +100,11 @@ namespace MainProject
         public void UpdatePopulationChange_Call(double populationChange)
         {
             view.UpdatePredictedInflation_Call((double)populationChange);
+        }
+
+        public void UpdatePopulationDecline_Call(double populationDecline)
+        {
+            view.UpdatePopulationDecline_Call((double)populationDecline);
         }
         ////
 

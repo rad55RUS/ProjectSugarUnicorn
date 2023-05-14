@@ -115,9 +115,9 @@ namespace MainProject
         internal DataGridView UpdateDataGridView(DataGridView dataGridView)
         {
             dataGridView.Rows.Clear();
-            for (int i = 0; i < dots.Count; i++)
+            for (int i = 0; i < dataList.Count; i++)
             {
-                dataGridView.Rows.Add(dots[i][0], dots[i][1]);
+                dataGridView.Rows.Add(dataList[i].Year, dataList[i].CPI);
             }
 
             return dataGridView;
@@ -167,7 +167,7 @@ namespace MainProject
             }
             return true;
         }
-
+        
         /// <summary>
         /// Clear chart from any data
         /// </summary>
@@ -186,21 +186,20 @@ namespace MainProject
         /// <returns></returns>
         internal Chart UpdateChart_Accumulated(Chart chart)
         {
-
-            if (dots.Count > 0)
+            if (dataList.Count > 0)
             {
                 Series series1 = new Series();
                 series1.Name = "Accumulated CPI";
                 series1.ChartType = SeriesChartType.Area;
                 series1.Color = Color.OrangeRed;
-                double accumulatedCPI = dots[0][1];
-                series1.Points.AddXY(dots[0][0], accumulatedCPI);
+                double accumulatedCPI = dataList[0].CPI;
+                series1.Points.AddXY(dataList[0].Year, accumulatedCPI);
 
-                for (int i = 1; i < dots.Count; i++)
+                for (int i = 1; i < dataList.Count; i++)
                 {
                     accumulatedCPI /= 100;
-                    accumulatedCPI *= (dots[i][1]);
-                    series1.Points.AddXY(dots[i][0], accumulatedCPI);
+                    accumulatedCPI *= dataList[i].CPI;
+                    series1.Points.AddXY(dataList[i].Year, accumulatedCPI);
                 }
                 chart.Series.Add(series1);
             }
@@ -216,14 +215,14 @@ namespace MainProject
         internal Chart UpdateChart_Common(Chart chart)
         {
 
-            if (dots.Count > 0)
+            if (dataList.Count > 0)
             {
                 Series series = new Series();
                 series.Name = "CPI";
                 series.ChartType = SeriesChartType.Area;
-                for (int i = 0; i < dots.Count; i++)
+                for (int i = 0; i < dataList.Count; i++)
                 {
-                    series.Points.AddXY(dots[i][0], dots[i][1]);
+                    series.Points.AddXY(dataList[i].Year, dataList[i].CPI);
                 }
                 chart.Series.Add(series);
             }

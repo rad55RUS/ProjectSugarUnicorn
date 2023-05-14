@@ -14,6 +14,7 @@ namespace DataClasses
         private int year;
         private double cpi;
         private double population;
+        private double populationChange;
         public List<District> districts = new List<District>();
         //
 
@@ -50,6 +51,18 @@ namespace DataClasses
             set
             {
                 population = value;
+            }
+        }
+
+        public double PopulationChange
+        {
+            get
+            {
+                return populationChange;
+            }
+            set
+            {
+                populationChange = value;
             }
         }
         //

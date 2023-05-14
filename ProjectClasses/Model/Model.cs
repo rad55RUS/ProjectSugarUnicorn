@@ -69,7 +69,7 @@ namespace MainProject
                                 }
                                 dataObject.CPI = Convert.ToDouble(tempString);
                             }
-                            if (year_Node.Name == "population")
+                            if (year_Node.Name == "Population")
                             {
                                 string tempString = "";
                                 for (int i = 0; i < year_Node.InnerText.Length; i++)

@@ -33,18 +33,21 @@ namespace MainProject
         /// <param name="path"></param>
         public void LoadData(string path)
         {
+            // Extra data changes
             model.LoadData(path);
-            List<Data> dataList = model.DataList;
-
+            model.DataList = PopulationChange(dataList);
             model.predictedCPI = PredictInflation(model.DataList);
             model.populationChange = PopulationChange(model.DataList);
-            model.populationDecline = PopulationDecline(model.DataList,ref model.DistrictName);
+            model.populationDecline = PopulationDecline(model.DataList, ref model.DistrictName);
+            //
 
+            // Presenter calls
             presenter.UpdateInflationData_Call(model.DataList);
             presenter.UpdateInflationChart_Call(model.DataList);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
             presenter.UpdatePopulationChange_Call(model.populationChange);
             presenter.UpdatePopulationDecline_Call(model.populationDecline, model.DistrictName);
+            //
         }
 
         /// <summary>
@@ -69,44 +72,56 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Calculate average population growth/decline
+        /// Calculate year population change in percentage
         /// </summary>
         /// <param name="dataList"></param>
         /// <returns></returns>
-        public double PopulationChange(List<Data> dataList)
+        public List<Data> PopulationChange( List<Data> dataList)
         {
-            double populatitionChange = 0;
-
-            foreach (Data data in dataList)
+            for (int i = 0; i < dataList.Count; i++)
             {
-                populatitionChange += data.Population;
+                Data data = dataList[i];
+               
+
+                if ( i==0)
+                {
+                    data.PopulationChange = 0; 
+
+                }
+                else
+                {
+                   data.PopulationChange = -((dataList[i-1].Population * 100 / dataList[i].Population) - 100);
+                }
+                dataList[i] = data;
             }
-
-            populatitionChange /= (double)dataList.Count;
-            populatitionChange = 100 * (Math.Pow(1 + populatitionChange / 100, 3) - 1);
-
-            return populatitionChange;
-
+            
+            return dataList;
         }
         
+        /// <summary>
+        /// Calculate most population decline among districts
+        /// </summary>
+        /// <param name="dataList"></param>
+        /// <param name="DistricName"></param>
+        /// <returns></returns>
         public double PopulationDecline(List<Data> dataList, ref string DistricName)
         {
             List<double> populationdecline = new List<double>();
 
-            double Max=double.MinValue;
+            double MaxDecline = double.MinValue;
 
             for (int i = 0; i < dataList[0].districts.Count; i++)
+            {
+                populationdecline.Add(dataList[0].districts[i].Population - dataList[dataList.Count - 1].districts[i].Population);
+
+                if (populationdecline[i] > MaxDecline)
                 {
-                    populationdecline.Add(dataList[0].districts[i].Population-dataList[dataList.Count-1].districts[i].Population);
-
-                    if (populationdecline[i] > Max)
-                    {
-                        Max = populationdecline[i];
-                        DistricName = dataList[0].districts[i].Name;
-                    }
+                    MaxDecline = populationdecline[i];
+                    DistricName = dataList[0].districts[i].Name;
                 }
+            }
 
-            return Max;
+            return MaxDecline;
         }
 
         /// <summary>

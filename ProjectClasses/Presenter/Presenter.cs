@@ -24,7 +24,7 @@ namespace MainProject
         public Interactor interactor;
         //
 
-        public List<Data> dataList; 
+        public List<Data> dataList;
 
         // Constructors
         public Presenter(IProjectForm view)
@@ -94,14 +94,10 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Add population growth/decline value to View call
+        /// Add max population decline among district into view
         /// </summary>
-        /// <param name="populationChange"></param>
-        public void UpdatePopulationChange_Call(double populationChange)
-        {
-            view.UpdatePredictedInflation_Call((double)populationChange);
-        }
-
+        /// <param name="populationDecline"></param>
+        /// <param name="DistrictName"></param>
         public void UpdatePopulationDecline_Call(double populationDecline, string DistrictName)
         {
             view.UpdatePopulationDecline_Call((double)populationDecline, DistrictName);
@@ -118,9 +114,11 @@ namespace MainProject
             dataGridView.Columns.Clear();
             dataGridView.Columns.Add("year_Column", "Year");
             dataGridView.Columns.Add("cpi_Column", "CPI");
+            dataGridView.Columns.Add("population_Column", "Population");
+            dataGridView.Columns.Add("populationChange_Column", "Population change");
             foreach (Data.District district in dataList[0].districts)
             {
-                dataGridView.Columns.Add(district.Name + "_Column", district.Name);
+                dataGridView.Columns.Add(district.Name + "_Column", district.Name + " District population");
             }
 
             for (int i = 0; i < dataList.Count; i++)
@@ -128,9 +126,11 @@ namespace MainProject
                 dataGridView.Rows.Add();
                 dataGridView[0, i].Value = dataList[i].Year;
                 dataGridView[1, i].Value = dataList[i].CPI;
+                dataGridView[2, i].Value = dataList[i].Population;
+                dataGridView[3, i].Value = dataList[i].PopulationChange;
                 for (int j = 0; j < dataList[0].districts.Count; j++)
                 {
-                    dataGridView[2 + j, i].Value = dataList[i].districts[j].Population;
+                    dataGridView[4 + j, i].Value = dataList[i].districts[j].Population;
                 }
             }
 
@@ -181,7 +181,7 @@ namespace MainProject
             }
             return true;
         }
-        
+
         /// <summary>
         /// Clear chart from any data
         /// </summary>
@@ -222,13 +222,12 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Fill chart with dots
+        /// Fill inflation chart
         /// </summary>
         /// <param name="chart"></param>
         /// <returns></returns>
         internal Chart UpdateChart_Common(Chart chart)
         {
-
             if (dataList.Count > 0)
             {
                 Series series = new Series();
@@ -243,9 +242,14 @@ namespace MainProject
 
             return chart;
         }
+
+        /// <summary>
+        /// Fill district population chart
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <returns></returns>
         internal Chart UpdateChart_District(Chart chart)
         {
-
             if (dataList.Count > 0)
             {
                 List<Series> seriesList = new List<Series>();
@@ -271,6 +275,26 @@ namespace MainProject
                 {
                     chart.Series.Add(series);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Fill population chart
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <returns></returns>
+        internal Chart UpdateChart_Population(Chart chart)
+        {
+            if (dots.Count > 0)
+            {
+                Series series = new Series();
+                series.Name = "Population";
+                series.ChartType = SeriesChartType.Area;
+                for (int i = 0; i < dots.Count; i++)
+                {
+                    series.Points.AddXY(dots[i][0], dots[i][2]);
+                }
+                chart.Series.Add(series);
             }
 
             return chart;

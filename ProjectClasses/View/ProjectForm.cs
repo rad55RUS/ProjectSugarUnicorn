@@ -54,6 +54,11 @@ namespace MainProject
             predictedInflation_TextBox.Text = presenter.UpdateTextBox(predictedInflation);
         }
 
+        /// <summary>
+        /// Add max population decine between districts and districts to textbox and label respectively
+        /// </summary>
+        /// <param name="populationDecline"></param>
+        /// <param name="DistrictName"></param>
         public void UpdatePopulationDecline_Call(double populationDecline, string DistrictName)
         {
             textBox1.Text = presenter.UpdateTextBox(populationDecline);
@@ -67,11 +72,16 @@ namespace MainProject
         /// <param name="y"></param>
         public void UpdateInflationChart_Call()
         {
-            InflationChart = presenter.ClearChart(InflationChart);
-            InflationChart = presenter.UpdateChart_Accumulated(InflationChart);
-            InflationChart = presenter.UpdateChart_Common(InflationChart);
-            DistrictPopChart = presenter.ClearChart(DistrictPopChart);
-            DistrictPopChart = presenter.UpdateChart_District(DistrictPopChart);
+            Inflation_Chart = presenter.ClearChart(Inflation_Chart);
+            Inflation_Chart = presenter.UpdateChart_Accumulated(Inflation_Chart);
+            Inflation_Chart = presenter.UpdateChart_Common(Inflation_Chart);
+
+            District_Chart = presenter.ClearChart(District_Chart);
+            District_Chart = presenter.UpdateChart_District(District_Chart);
+
+            Population_Chart = presenter.ClearChart(Population_Chart);
+            Population_Chart = presenter.UpdateChart_Population(Population_Chart);
+
         }
         
         /// <summary>
@@ -102,11 +112,6 @@ namespace MainProject
             {
                 CalcInflation_Possible_TextBox.Text = presenter.CalcInflation(CalcInflation_Current_TextBox.Text);
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
         //
     }

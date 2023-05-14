@@ -7,6 +7,15 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="CPI" type="xs:double"/>
+							<xs:element name="Population" type="xs:double"/>
+							<xs:element name="District" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Population" type="xs:double"/>
+									</xs:sequence>
+									<xs:attribute name="Value" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
 						</xs:sequence>
 						<xs:attribute name="Value" type="xs:int" use="required"/>
 					</xs:complexType>

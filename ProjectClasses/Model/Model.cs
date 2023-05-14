@@ -83,6 +83,30 @@ namespace MainProject
                                 }
                                 dataObject.Population = Convert.ToDouble(tempString);
                             }
+
+                            if (year_Node.Name=="District")  
+                            {
+                                foreach (XmlNode district_Node in year_Node.ChildNodes)
+                                {
+                                    XmlNode district_Attribute = year_Node.Attributes.GetNamedItem("Value");
+                                    if (district_Node.Name == "Population")
+                                    {
+                                        string tempString = "";
+                                        for (int i = 0; i < year_Node.InnerText.Length; i++)
+                                        {
+                                            if (year_Node.InnerText[i] == '.')
+                                            {
+                                                tempString += ",";
+                                            }
+                                            else
+                                            {
+                                                tempString += year_Node.InnerText[i];
+                                            }
+                                        }
+                                        dataObject.AddDistrict(district_Attribute.Value, Convert.ToDouble(tempString));
+                                    }
+                                }
+                            }
                         }
 
                         DataList.Add(dataObject);

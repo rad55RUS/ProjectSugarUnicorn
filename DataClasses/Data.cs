@@ -14,7 +14,7 @@ namespace DataClasses
         private int year;
         private double cpi;
         private double population;
-        private District district = new District();
+        private List<District> districts = new List<District>();
         //
 
         // Public properties
@@ -83,6 +83,11 @@ namespace DataClasses
                     population = value;
                 }
             }
+            public District(string _Name, double _population) 
+            {
+                name =_Name;
+                population = _population;
+            }
         }
         //
 
@@ -101,8 +106,8 @@ namespace DataClasses
         // Methods
         public void AddDistrict(string name, double population)
         {
-            district.Name = name;
-            district.Population = population;
+            District district = new District(name,population);
+            districts.Add(district);
         }
         //
     }

@@ -14,7 +14,7 @@ namespace DataClasses
         private int year;
         private double cpi;
         private double population;
-        private List<District> districts = new List<District>();
+        public List<District> districts = new List<District>();
         //
 
         // Public properties

@@ -16,6 +16,7 @@ namespace MainProject
         public List<Data> DataList = new List<Data>();
         public double predictedCPI;
         public double populationChange;
+        public double populationDecline;
         //
 
         // Constructors

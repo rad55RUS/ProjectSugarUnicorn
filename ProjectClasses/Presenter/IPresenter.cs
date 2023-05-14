@@ -16,7 +16,6 @@ namespace MainProject
         void UpdateInflationChart_Call(List<List<double>> dots);
         void UpdateInflationData_Call(List<List<double>> dots);
         void UpdatePredictedInflation_Call(double predictedInflation);
-
         void UpdatePopulationChange_Call(double populationChange);
         //
     }

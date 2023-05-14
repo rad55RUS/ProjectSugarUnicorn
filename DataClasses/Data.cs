@@ -101,8 +101,8 @@ namespace DataClasses
         // Methods
         public void AddDistrict(string name, double population)
         {
-            district.name = name;
-            district.population = population;
+            district.Name = name;
+            district.Population = population;
         }
         //
     }

@@ -77,13 +77,20 @@ namespace MainProject
             return predictedCPI;
         }
 
+        /// <summary>
+        /// Calculate average population growth/decline
+        /// </summary>
+        /// <param name="dataList"></param>
+        /// <returns></returns>
         public double PopulationChange(List<Data> dataList)
         {
             double populatitionChange = 0;
+
             foreach (Data data in dataList)
             {
                 populatitionChange += data.Population;
             }
+
             populatitionChange /= (double)dataList.Count;
             populatitionChange = 100 * (Math.Pow(1 + populatitionChange / 100, 3) - 1);
 

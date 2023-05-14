@@ -93,11 +93,16 @@ namespace MainProject
         {
             view.UpdatePredictedInflation_Call((double)predictedInflation);
         }
-        ////
+
+        /// <summary>
+        /// Add population growth/decline value to View call
+        /// </summary>
+        /// <param name="populationChange"></param>
         public void UpdatePopulationChange_Call(double populationChange)
         {
             view.UpdatePredictedInflation_Call((double)populationChange);
         }
+        ////
 
         //// Internal void methods
         /// <summary>

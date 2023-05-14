@@ -113,7 +113,7 @@ namespace MainProject
             dataGridView.Rows.Clear();
             for (int i = 0; i < dots.Count; i++)
             {
-                dataGridView.Rows.Add(dots[i][0], dots[i][1]);
+                dataGridView.Rows.Add(dots[i][0], dots[i][1], dots[i][2], dots[i][3]);
             }
 
             return dataGridView;
@@ -220,6 +220,23 @@ namespace MainProject
                 for (int i = 0; i < dots.Count; i++)
                 {
                     series.Points.AddXY(dots[i][0], dots[i][1]);
+                }
+                chart.Series.Add(series);
+            }
+
+            return chart;
+        }
+        internal Chart UpdatePopulationChart_Common(Chart chart)
+        {
+
+            if (dots.Count > 0)
+            {
+                Series series = new Series();
+                series.Name = "Population";
+                series.ChartType = SeriesChartType.Area;
+                for (int i = 0; i < dots.Count; i++)
+                {
+                    series.Points.AddXY(dots[i][0], dots[i][2]);
                 }
                 chart.Series.Add(series);
             }

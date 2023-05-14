@@ -89,14 +89,16 @@ namespace MainProject
             {
                 Data data = dataList[i];
                
-                if( i==0)
+
+                if ( i==0)
                 {
                     data.PopulationChange = 0; 
 
                 }
                 else
                 {
-                    data.PopulationChange = 100 * (Math.Pow(1 + dataList[i-1].PopulationChange / 100, 3) - 1);
+                   data.PopulationChange = -((dataList[i-1].Population * 100 / dataList[i].Population) - 100);
+                   //data.PopulationChange = 100 * (Math.Pow(1+ dataList[i-1].Population / (double)100, 3) - 1);
                 }
                 dataList[i] = data;
             }

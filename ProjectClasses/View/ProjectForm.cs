@@ -64,6 +64,8 @@ namespace MainProject
             InflationChart = presenter.ClearChart(InflationChart);
             InflationChart = presenter.UpdateChart_Accumulated(InflationChart);
             InflationChart = presenter.UpdateChart_Common(InflationChart);
+            population_chart = presenter.ClearChart(population_chart);
+            population_chart = presenter.UpdatePopulationChart_Common(population_chart);
         }
         
         /// <summary>

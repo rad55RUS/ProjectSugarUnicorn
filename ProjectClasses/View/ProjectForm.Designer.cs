@@ -50,11 +50,13 @@
             this.predictedInflation_TextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.InflationTable_DataGridView = new System.Windows.Forms.DataGridView();
-            this.InflationYear_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPI_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoadData_Button = new System.Windows.Forms.Button();
             this.population_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label3 = new System.Windows.Forms.Label();
+            this.InflationYear_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPI_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Population_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PopulationChange = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InflationChart)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -91,7 +93,7 @@
             this.InflationChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.InflationChart.Legends.Add(legend2);
-            this.InflationChart.Location = new System.Drawing.Point(248, 27);
+            this.InflationChart.Location = new System.Drawing.Point(302, 26);
             this.InflationChart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.InflationChart.Name = "InflationChart";
             series2.ChartArea = "ChartArea1";
@@ -113,7 +115,7 @@
             this.groupBox2.Controls.Add(this.CalcInflation_Current_TextBox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(248, 300);
+            this.groupBox2.Location = new System.Drawing.Point(302, 290);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -179,7 +181,7 @@
             // predictedInflation_TextBox
             // 
             this.predictedInflation_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.predictedInflation_TextBox.Location = new System.Drawing.Point(497, 481);
+            this.predictedInflation_TextBox.Location = new System.Drawing.Point(551, 470);
             this.predictedInflation_TextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.predictedInflation_TextBox.Name = "predictedInflation_TextBox";
             this.predictedInflation_TextBox.ReadOnly = true;
@@ -190,7 +192,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(244, 481);
+            this.label1.Location = new System.Drawing.Point(298, 470);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 20);
@@ -207,7 +209,9 @@
             this.InflationTable_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InflationTable_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.InflationYear_Column,
-            this.CPI_Column});
+            this.CPI_Column,
+            this.Population_column,
+            this.PopulationChange});
             this.InflationTable_DataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.InflationTable_DataGridView.Location = new System.Drawing.Point(8, 26);
             this.InflationTable_DataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -217,29 +221,9 @@
             this.InflationTable_DataGridView.RowHeadersWidth = 51;
             this.InflationTable_DataGridView.RowTemplate.ReadOnly = true;
             this.InflationTable_DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InflationTable_DataGridView.Size = new System.Drawing.Size(190, 475);
+            this.InflationTable_DataGridView.Size = new System.Drawing.Size(276, 475);
             this.InflationTable_DataGridView.TabIndex = 9;
             this.InflationTable_DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.InflationTable_DataGridView_CellContentClick);
-            // 
-            // InflationYear_Column
-            // 
-            this.InflationYear_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.InflationYear_Column.HeaderText = "Year";
-            this.InflationYear_Column.MinimumWidth = 45;
-            this.InflationYear_Column.Name = "InflationYear_Column";
-            this.InflationYear_Column.ReadOnly = true;
-            this.InflationYear_Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.InflationYear_Column.Width = 49;
-            // 
-            // CPI_Column
-            // 
-            this.CPI_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CPI_Column.HeaderText = "CPI";
-            this.CPI_Column.MinimumWidth = 50;
-            this.CPI_Column.Name = "CPI_Column";
-            this.CPI_Column.ReadOnly = true;
-            this.CPI_Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.CPI_Column.Width = 50;
             // 
             // LoadData_Button
             // 
@@ -263,7 +247,7 @@
             this.population_chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.population_chart.Legends.Add(legend1);
-            this.population_chart.Location = new System.Drawing.Point(918, 27);
+            this.population_chart.Location = new System.Drawing.Point(960, 26);
             this.population_chart.Margin = new System.Windows.Forms.Padding(4);
             this.population_chart.Name = "population_chart";
             series1.ChartArea = "ChartArea1";
@@ -280,11 +264,47 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(914, 327);
+            this.label3.Location = new System.Drawing.Point(956, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
+            this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 18;
-            this.label3.Text = "label3";
+            this.label3.Text = "Population Change";
+            // 
+            // InflationYear_Column
+            // 
+            this.InflationYear_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.InflationYear_Column.HeaderText = "Year";
+            this.InflationYear_Column.MinimumWidth = 45;
+            this.InflationYear_Column.Name = "InflationYear_Column";
+            this.InflationYear_Column.ReadOnly = true;
+            this.InflationYear_Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.InflationYear_Column.Width = 49;
+            // 
+            // CPI_Column
+            // 
+            this.CPI_Column.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CPI_Column.HeaderText = "CPI";
+            this.CPI_Column.MinimumWidth = 50;
+            this.CPI_Column.Name = "CPI_Column";
+            this.CPI_Column.ReadOnly = true;
+            this.CPI_Column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CPI_Column.Width = 50;
+            // 
+            // Population_column
+            // 
+            this.Population_column.HeaderText = "PoP";
+            this.Population_column.MinimumWidth = 6;
+            this.Population_column.Name = "Population_column";
+            this.Population_column.ReadOnly = true;
+            this.Population_column.Width = 50;
+            // 
+            // PopulationChange
+            // 
+            this.PopulationChange.HeaderText = "PopChange";
+            this.PopulationChange.MinimumWidth = 6;
+            this.PopulationChange.Name = "PopulationChange";
+            this.PopulationChange.ReadOnly = true;
+            this.PopulationChange.Width = 125;
             // 
             // ProjectForm
             // 
@@ -315,8 +335,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.DataGridView InflationTable_DataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InflationYear_Column;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPI_Column;
         private System.Windows.Forms.Button LoadData_Button;
         private System.Windows.Forms.TextBox predictedInflation_TextBox;
         private System.Windows.Forms.Label label1;
@@ -329,5 +347,9 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart InflationChart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart population_chart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InflationYear_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPI_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Population_column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PopulationChange;
     }
 }

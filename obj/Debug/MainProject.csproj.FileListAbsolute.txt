@@ -33,3 +33,14 @@ C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.Genera
 C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
 C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.exe
 C:\Users\HP\Source\Repos\ProjectSugarUnicorn\obj\Debug\ScoreTable.pdb
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\bin\Debug\ScoreTable.exe.config
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\bin\Debug\ScoreTable.exe
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\bin\Debug\ScoreTable.pdb
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.SuggestedBindingRedirects.cache
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\MainProject.ProjectForm.resources
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\ScoreTable.Properties.Resources.resources
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\MainProject.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\ScoreTable.exe
+C:\Users\HP\source\repos\ProjectSugarUnicorn1\obj\Debug\ScoreTable.pdb

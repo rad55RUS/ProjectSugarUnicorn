@@ -15,6 +15,7 @@ namespace DataClasses
         private double cpi;
         private double population;
         private District district = new District();
+        private double populationChange;
         //
 
         // Public properties
@@ -50,6 +51,18 @@ namespace DataClasses
             set
             {
                 population = value;
+            }
+        }
+
+        public double PopulationChange
+        {
+            get
+            {
+                return populationChange;
+            }
+            set
+            {
+                populationChange = value;
             }
         }
         //

@@ -36,24 +36,25 @@ namespace MainProject
             model.LoadData(path);
             List<Data> dataList = model.DataList;
             List<List<double>> dots = new List<List<double>>();
-
+            dataList = PopulationChange(dataList);
+           
             foreach(Data data in dataList)
             {
                 List<double> coordinate = new List<double>();
                 coordinate.Add(data.Year);
                 coordinate.Add(data.CPI);
                 coordinate.Add(data.Population);
+                coordinate.Add(data.PopulationChange);
                 dots.Add(coordinate);
 
             }
 
             model.predictedCPI = PredictInflation(dataList);
-            model.populationChange = PopulationChange(dataList);
+           
 
             presenter.UpdateInflationData_Call(dots);
             presenter.UpdateInflationChart_Call(dots);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
-            presenter.UpdatePopulationChange_Call(model.populationChange);
         }
 
         /// <summary>
@@ -82,19 +83,26 @@ namespace MainProject
         /// </summary>
         /// <param name="dataList"></param>
         /// <returns></returns>
-        public double PopulationChange(List<Data> dataList)
+        public List<Data> PopulationChange( List<Data> dataList)
         {
-            double populatitionChange = 0;
-
-            foreach (Data data in dataList)
+            for (int i = 0; i < dataList.Count; i++)
             {
-                populatitionChange += data.Population;
+                Data data = dataList[i];
+               
+                if( i==0)
+                {
+                    data.PopulationChange = 0; 
+
+                }
+                else
+                {
+                    data.PopulationChange = 100 * (Math.Pow(1 + dataList[i-1].PopulationChange / 100, 3) - 1);
+                }
+                dataList[i] = data;
             }
-
-            populatitionChange /= (double)dataList.Count;
-            populatitionChange = 100 * (Math.Pow(1 + populatitionChange / 100, 3) - 1);
-
-            return populatitionChange;
+            
+         
+            return dataList;
 
         }
         /// <summary>

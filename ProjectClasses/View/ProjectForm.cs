@@ -95,6 +95,11 @@ namespace MainProject
                 CalcInflation_Possible_TextBox.Text = presenter.CalcInflation(CalcInflation_Current_TextBox.Text);
             }
         }
+
+        private void InflationTable_DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         //
     }
 }

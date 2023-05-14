@@ -32,53 +32,53 @@ namespace MainProject
             DataList.Clear();
             predictedCPI = 0;
 
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(path);
-            XmlElement xRoot = xDoc.DocumentElement;
-            if (xRoot != null)
+            XmlDocument data_XML = new XmlDocument();
+            data_XML.Load(path);
+            XmlElement data_Root = data_XML.DocumentElement;
+            if (data_Root != null)
             {
-                foreach (XmlElement xnode in xRoot)
+                foreach (XmlElement data_Node in data_Root)
                 {
                     Data dataObject = new Data();
 
-                    XmlNode attr = xnode.Attributes.GetNamedItem("Value");
+                    XmlNode year_Attribute = data_Node.Attributes.GetNamedItem("Value");
                     try
                     {
-                        if (attr == null)
+                        if (year_Attribute == null)
                         {
                             throw new Exception();
                         }
-                        dataObject.Year = Convert.ToInt32(attr.Value);
-                        foreach (XmlNode childnode in xnode.ChildNodes)
+                        dataObject.Year = Convert.ToInt32(year_Attribute.Value);
+                        foreach (XmlNode year_Node in data_Node.ChildNodes)
                         {
-                            if (childnode.Name == "CPI")
+                            if (year_Node.Name == "CPI")
                             {
                                 string tempString = "";
-                                for (int i = 0; i < childnode.InnerText.Length; i++)
+                                for (int i = 0; i < year_Node.InnerText.Length; i++)
                                 {
-                                    if (childnode.InnerText[i] == '.')
+                                    if (year_Node.InnerText[i] == '.')
                                     {
                                         tempString += ",";
                                     }
                                     else
                                     {
-                                        tempString += childnode.InnerText[i];
+                                        tempString += year_Node.InnerText[i];
                                     }
                                 }
                                 dataObject.CPI = Convert.ToDouble(tempString);
                             }
-                            if (childnode.Name == "population")
+                            if (year_Node.Name == "population")
                             {
                                 string tempString = "";
-                                for (int i = 0; i < childnode.InnerText.Length; i++)
+                                for (int i = 0; i < year_Node.InnerText.Length; i++)
                                 {
-                                    if (childnode.InnerText[i] == '.')
+                                    if (year_Node.InnerText[i] == '.')
                                     {
                                         tempString += ",";
                                     }
                                     else
                                     {
-                                        tempString += childnode.InnerText[i];
+                                        tempString += year_Node.InnerText[i];
                                     }
                                 }
                                 dataObject.Population = Convert.ToDouble(tempString);

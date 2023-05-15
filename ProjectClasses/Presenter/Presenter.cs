@@ -14,6 +14,7 @@ using System.Xml.Schema;
 using MainProject.Properties;
 using static System.Net.Mime.MediaTypeNames;
 using DataClasses;
+using System.ComponentModel.Design.Serialization;
 
 namespace MainProject
 {
@@ -24,7 +25,7 @@ namespace MainProject
         public Interactor interactor;
         //
 
-        public List<Data> dataList;
+        public List<Data> dataList; 
 
         // Constructors
         public Presenter(IProjectForm view)
@@ -70,19 +71,19 @@ namespace MainProject
         /// <summary>
         /// Add year to view call
         /// </summary>
-        public void UpdateInflationData_Call(List<Data> dataList)
+        public void UpdateData_Call(List<Data> dataList)
         {
             this.dataList = dataList;
-            view.UpdateInflationData_Call();
+            view.UpdateData_Call();
         }
 
         /// <summary>
         /// Recreate inflation chart in view call
         /// </summary>
-        public void UpdateInflationChart_Call(List<Data> dataList)
+        public void UpdateChart_Call(List<Data> dataList)
         {
             this.dataList = dataList;
-            view.UpdateInflationChart_Call();
+            view.UpdateChart_Call();
         }
 
         /// <summary>
@@ -93,11 +94,6 @@ namespace MainProject
             view.UpdatePredictedInflation_Call((double)predictedInflation);
         }
 
-        /// <summary>
-        /// Add max population decline among district into view
-        /// </summary>
-        /// <param name="populationDecline"></param>
-        /// <param name="DistrictName"></param>
         public void UpdatePopulationDecline_Call(double populationDecline, string DistrictName)
         {
             view.UpdatePopulationDecline_Call((double)populationDecline, DistrictName);
@@ -113,12 +109,20 @@ namespace MainProject
             dataGridView.Rows.Clear();
             dataGridView.Columns.Clear();
             dataGridView.Columns.Add("year_Column", "Year");
-            dataGridView.Columns.Add("cpi_Column", "CPI");
-            dataGridView.Columns.Add("population_Column", "Population");
-            dataGridView.Columns.Add("populationChange_Column", "Population change");
+            dataGridView.Columns.Add("cpi_Column", "CPI (%)");
+            dataGridView.Columns.Add("population_Column", "Population (million)");
+            dataGridView.Columns.Add("populationChange_Column", "Population Change (%)");
+
             foreach (Data.District district in dataList[0].districts)
             {
-                dataGridView.Columns.Add(district.Name + "_Column", district.Name + " District population");
+                dataGridView.Columns.Add(district.Name + "_Column", district.Name);
+                dataGridView.Columns[dataGridView.Columns.Count - 1].SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                dataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
 
             for (int i = 0; i < dataList.Count; i++)
@@ -127,7 +131,7 @@ namespace MainProject
                 dataGridView[0, i].Value = dataList[i].Year;
                 dataGridView[1, i].Value = dataList[i].CPI;
                 dataGridView[2, i].Value = dataList[i].Population;
-                dataGridView[3, i].Value = dataList[i].PopulationChange;
+                dataGridView[3, i].Value = Math.Round(dataList[i].PopulationChange, 2);
                 for (int j = 0; j < dataList[0].districts.Count; j++)
                 {
                     dataGridView[4 + j, i].Value = dataList[i].districts[j].Population;
@@ -181,7 +185,7 @@ namespace MainProject
             }
             return true;
         }
-
+        
         /// <summary>
         /// Clear chart from any data
         /// </summary>
@@ -194,44 +198,45 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Fill chart with accumulated dots
+        /// Update chart with accumulated CPI data
         /// </summary>
         /// <param name="chart"></param>
         /// <returns></returns>
-        internal Chart UpdateChart_Accumulated(Chart chart)
+        internal Chart UpdateChart_InflationAccumulated(Chart chart)
         {
             if (dataList.Count > 0)
             {
-                Series series1 = new Series();
-                series1.Name = "Accumulated CPI";
-                series1.ChartType = SeriesChartType.Area;
-                series1.Color = Color.OrangeRed;
+                Series series = new Series();
+                series.Name = "Accumulated CPI (%)";
+                series.ChartType = SeriesChartType.Area;
+                series.Color = Color.OrangeRed;
                 double accumulatedCPI = dataList[0].CPI;
-                series1.Points.AddXY(dataList[0].Year, accumulatedCPI);
+                series.Points.AddXY(dataList[0].Year, accumulatedCPI);
 
                 for (int i = 1; i < dataList.Count; i++)
                 {
                     accumulatedCPI /= 100;
                     accumulatedCPI *= dataList[i].CPI;
-                    series1.Points.AddXY(dataList[i].Year, accumulatedCPI);
+                    series.Points.AddXY(dataList[i].Year, accumulatedCPI);
                 }
-                chart.Series.Add(series1);
+                chart.Series.Add(series);
             }
 
             return chart;
         }
 
         /// <summary>
-        /// Fill inflation chart
+        /// Update chart with CPI data
         /// </summary>
         /// <param name="chart"></param>
         /// <returns></returns>
-        internal Chart UpdateChart_Common(Chart chart)
+        internal Chart UpdateChart_InflationCommon(Chart chart)
         {
+
             if (dataList.Count > 0)
             {
                 Series series = new Series();
-                series.Name = "CPI";
+                series.Name = "CPI (%)";
                 series.ChartType = SeriesChartType.Area;
                 for (int i = 0; i < dataList.Count; i++)
                 {
@@ -244,20 +249,44 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Fill district population chart
+        /// Update chart with Population data
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <returns></returns>
+        internal Chart UpdateChart_Population(Chart chart)
+        {
+            if (dataList.Count > 0)
+            {
+                Series series = new Series();
+                series.Name = "Population";
+                series.ChartType = SeriesChartType.Area;
+                for (int i = 0; i < dataList.Count; i++)
+                {
+                    series.Points.AddXY(dataList[i].Year, dataList[i].Population);
+                }
+                chart.Series.Add(series);
+            }
+
+            return chart;
+        }
+
+        /// <summary>
+        /// Update chart with district population data
         /// </summary>
         /// <param name="chart"></param>
         /// <returns></returns>
         internal Chart UpdateChart_District(Chart chart)
         {
+
             if (dataList.Count > 0)
             {
                 List<Series> seriesList = new List<Series>();
                 foreach (Data.District district in dataList[0].districts)
                 {
                     Series series = new Series();
-                    series.Name = district.Name;
+                    series.Name = district.Name + " population";
                     series.ChartType = SeriesChartType.Line;
+                    series.BorderWidth = 3;
                     seriesList.Add(series);
                 }
 
@@ -275,26 +304,6 @@ namespace MainProject
                 {
                     chart.Series.Add(series);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Fill population chart
-        /// </summary>
-        /// <param name="chart"></param>
-        /// <returns></returns>
-        internal Chart UpdateChart_Population(Chart chart)
-        {
-            if (dots.Count > 0)
-            {
-                Series series = new Series();
-                series.Name = "Population";
-                series.ChartType = SeriesChartType.Area;
-                for (int i = 0; i < dots.Count; i++)
-                {
-                    series.Points.AddXY(dots[i][0], dots[i][2]);
-                }
-                chart.Series.Add(series);
             }
 
             return chart;

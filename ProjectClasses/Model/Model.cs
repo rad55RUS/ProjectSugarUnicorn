@@ -15,9 +15,8 @@ namespace MainProject
         // Public fields
         public List<Data> DataList = new List<Data>();
         public double predictedCPI;
-        public double populationChange;
         public double populationDecline;
-        public string DistrictName="";
+        public string districtMaxDecline = "";
         //
 
         // Constructors

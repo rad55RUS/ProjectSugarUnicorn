@@ -5,376 +5,376 @@ xsi:noNamespaceSchemaLocation="Data_Schema.xsd">
 	<Year Value="2008">
 		<CPI>113.28</CPI>
 		<Population>142.8</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>37.15</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.50</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>22.84</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>30.24</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.24</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.55</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.49</Population>
 		</District>
 	</Year>
 	<Year Value="2009">
 		<CPI>108.80</CPI>
 		<Population>142.7</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>37.12</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.46</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>22.90</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>30.16</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.25</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.54</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.46</Population>
 		</District>
 	</Year>
 	<Year Value="2010">
 		<CPI>108.78</CPI>
 		<Population>142.9</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>38.43</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.62</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>13.85</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.90</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.08</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.26</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.29</Population>
 		</District>
 	</Year>
 	<Year Value="2011">
 		<CPI>106.10</CPI>
 		<Population>142.9</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>38.45</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.63</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>13.85</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.88</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.09</Population>
 		</District>
 
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.25</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.28</Population>
 		</District>
 	</Year>
 	<Year Value="2012">
 		<CPI>106.57</CPI>
 		<Population>143.0</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>38.54</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.66</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>13.88</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.81</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.14</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.26</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.27</Population>
 		</District>
 	</Year>
 	<Year Value="2013">
 		<CPI>106.47</CPI>
 		<Population>143.3</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>38.68</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.72</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>13.91</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.77</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.19</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.28</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.25</Population>
 		</District>
 	</Year>
 	<Year Value="2014">
 		<CPI>111.35</CPI>
 		<Population>143.7</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>38.82</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.80</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>13.96</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.74</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.23</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.29</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.23</Population>
 		</District>
 	</Year>
 	<Year Value="2015">
 		<CPI>112.91</CPI>
 		<Population>146.3</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>38.95</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.84</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>14.00</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.72</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.28</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.31</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.21</Population>
 		</District>
 	</Year>
 	<Year Value="2016">
 		<CPI>105.39</CPI>
 		<Population>146.5</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>39.10</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.85</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>14.04</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.67</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.31</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.32</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.19</Population>
 		</District>
 	</Year>
 	<Year Value="2017">
 		<CPI>102.51</CPI>
 		<Population>146.8</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>39.21</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.90</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>16.43</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.64</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.35</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.33</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.18</Population>
 		</District>
 	</Year>
 	<Year Value="2018">
 		<CPI>104.26</CPI>
 		<Population>146.9</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>39.31</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.95</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>16.44</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.54</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.36</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>19.29</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>6.17</Population>
 		</District>
 	</Year>
 	<Year Value="2019">
 		<CPI>103.04</CPI>
 		<Population>146.8</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>39.38</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.97</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>16.45</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.40</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.35</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>17.17</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>8.19</Population>
 		</District>
 	</Year>
 	<Year Value="2020">
 		<CPI>104.91</CPI>
 		<Population>146.7</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>39.43</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.98</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>16.47</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>29.29</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.36</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>17.12</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>8.17</Population>
 		</District>
 	</Year>
 	<Year Value="2021">
 		<CPI>108.39</CPI>
 		<Population>146.2</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>40.33</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.92</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>16.75</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>28.94</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.30</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>17.79</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>7.98</Population>
 		</District>
 	</Year>
 	<Year Value="2022">
 		<CPI>111.94</CPI>
 		<Population>147.0</Population>
-		<District Value ="Center">
+		<District Value ="Ceuntral">
 			<Population>40.30</Population>
 		</District>
-		<District Value ="Severo-zapad">
+		<District Value ="Severo-zapadny">
 			<Population>13.91</Population>
 		</District>
-		<District Value ="Yuzhnyy">
+		<District Value ="Yuzhny">
 			<Population>16.72</Population>
 		</District>
-		<District Value ="Privolzhskiy">
+		<District Value ="Privolzhsky">
 			<Population>28.87</Population>
 		</District>
-		<District Value ="Ural'skiy">
+		<District Value ="Uralsky">
 			<Population>12.29</Population>
 		</District>
-		<District Value ="Sibirskiy">
+		<District Value ="Sibirsky">
 			<Population>17.76</Population>
 		</District>
-		<District Value ="Dal'nevostochnyy">
+		<District Value ="Dalnevostochny">
 			<Population>7.97</Population>
 		</District>
 	</Year>

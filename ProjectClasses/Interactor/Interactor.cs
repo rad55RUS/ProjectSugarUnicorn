@@ -35,18 +35,16 @@ namespace MainProject
         {
             // Extra data changes
             model.LoadData(path);
-            model.DataList = PopulationChange(dataList);
+            model.DataList = PopulationChange(model.DataList);
             model.predictedCPI = PredictInflation(model.DataList);
-            model.populationChange = PopulationChange(model.DataList);
-            model.populationDecline = PopulationDecline(model.DataList, ref model.DistrictName);
+            model.populationDecline = PopulationDecline(model.DataList, ref model.districtMaxDecline);
             //
 
             // Presenter calls
-            presenter.UpdateInflationData_Call(model.DataList);
-            presenter.UpdateInflationChart_Call(model.DataList);
+            presenter.UpdateData_Call(model.DataList);
+            presenter.UpdateChart_Call(model.DataList);
             presenter.UpdatePredictedInflation_Call(model.predictedCPI);
-            presenter.UpdatePopulationChange_Call(model.populationChange);
-            presenter.UpdatePopulationDecline_Call(model.populationDecline, model.DistrictName);
+            presenter.UpdatePopulationDecline_Call(model.populationDecline, model.districtMaxDecline);
             //
         }
 

@@ -10,8 +10,8 @@ namespace MainProject
 {
     public interface IProjectForm
     {
-        void UpdateInflationChart_Call();
-        void UpdateInflationData_Call();
+        void UpdateChart_Call();
+        void UpdateData_Call();
         void UpdatePredictedInflation_Call(double predictedInflation);
         void ShowError(string message);
         void UpdatePopulationDecline_Call(double populationDecline, string DistrictName);

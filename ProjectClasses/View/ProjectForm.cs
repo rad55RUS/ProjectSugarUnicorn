@@ -29,7 +29,10 @@ namespace MainProject
 
             // Presenter declaration
             presenter = new Presenter(this);
-            InflationChart = presenter.ClearChart(InflationChart);
+
+            Inflation_Chart = presenter.ClearChart(Inflation_Chart);
+            District_Chart = presenter.ClearChart(District_Chart);
+            Population_Chart = presenter.ClearChart(Population_Chart);
             //
 
             // Event assignment
@@ -41,7 +44,7 @@ namespace MainProject
         /// <summary>
         /// Add CPI to inflation DataGridView call
         /// </summary>
-        public void UpdateInflationData_Call()
+        public void UpdateData_Call()
         {
             InflationTable_DataGridView = presenter.UpdateDataGridView(InflationTable_DataGridView);
         }
@@ -61,8 +64,8 @@ namespace MainProject
         /// <param name="DistrictName"></param>
         public void UpdatePopulationDecline_Call(double populationDecline, string DistrictName)
         {
-            textBox1.Text = presenter.UpdateTextBox(populationDecline);
-            districtName.Text = "Округ с самой большой убылью - " + DistrictName;
+            DistrictPopulationDecline_TextBox.Text = presenter.UpdateTextBox(populationDecline);
+            DistrictPopulationDecline_Label.Text = "District with the biggest population decline is " + DistrictName + " federal district";
         }
 
         /// <summary>
@@ -70,18 +73,17 @@ namespace MainProject
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
-        public void UpdateInflationChart_Call()
+        public void UpdateChart_Call()
         {
             Inflation_Chart = presenter.ClearChart(Inflation_Chart);
-            Inflation_Chart = presenter.UpdateChart_Accumulated(Inflation_Chart);
-            Inflation_Chart = presenter.UpdateChart_Common(Inflation_Chart);
+            Inflation_Chart = presenter.UpdateChart_InflationAccumulated(Inflation_Chart);
+            Inflation_Chart = presenter.UpdateChart_InflationCommon(Inflation_Chart);
 
             District_Chart = presenter.ClearChart(District_Chart);
             District_Chart = presenter.UpdateChart_District(District_Chart);
 
             Population_Chart = presenter.ClearChart(Population_Chart);
             Population_Chart = presenter.UpdateChart_Population(Population_Chart);
-
         }
         
         /// <summary>

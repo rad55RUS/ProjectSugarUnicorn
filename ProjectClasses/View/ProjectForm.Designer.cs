@@ -115,7 +115,7 @@
             this.groupBox6.Controls.Add(this.DistrictPopulationDecline_Label);
             this.groupBox6.Location = new System.Drawing.Point(18, 347);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(906, 454);
+            this.groupBox6.Size = new System.Drawing.Size(906, 556);
             this.groupBox6.TabIndex = 22;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "District population (million)";
@@ -123,7 +123,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 414);
+            this.label3.Location = new System.Drawing.Point(9, 516);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(178, 17);
@@ -149,13 +149,13 @@
             series1.Points.Add(dataPoint1);
             series1.Points.Add(dataPoint2);
             this.District_Chart.Series.Add(series1);
-            this.District_Chart.Size = new System.Drawing.Size(881, 338);
+            this.District_Chart.Size = new System.Drawing.Size(881, 432);
             this.District_Chart.TabIndex = 17;
             this.District_Chart.Text = "chart1";
             // 
             // DistrictPopulationDecline_TextBox
             // 
-            this.DistrictPopulationDecline_TextBox.Location = new System.Drawing.Point(191, 414);
+            this.DistrictPopulationDecline_TextBox.Location = new System.Drawing.Point(191, 516);
             this.DistrictPopulationDecline_TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistrictPopulationDecline_TextBox.Name = "DistrictPopulationDecline_TextBox";
             this.DistrictPopulationDecline_TextBox.ReadOnly = true;
@@ -165,7 +165,7 @@
             // DistrictPopulationDecline_Label
             // 
             this.DistrictPopulationDecline_Label.AutoSize = true;
-            this.DistrictPopulationDecline_Label.Location = new System.Drawing.Point(9, 379);
+            this.DistrictPopulationDecline_Label.Location = new System.Drawing.Point(9, 481);
             this.DistrictPopulationDecline_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DistrictPopulationDecline_Label.Name = "DistrictPopulationDecline_Label";
             this.DistrictPopulationDecline_Label.Size = new System.Drawing.Size(276, 17);
